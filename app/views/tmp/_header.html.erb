@@ -1,0 +1,29 @@
+<%= stylesheet_link_tag "header", :media => "all" %>
+<header class="main_header">
+    <div class="topwer">
+        <%= link_to "/", class: "top_icon" do -%>
+            <h1><%= image_tag "icon.png",alt: "music.branchwith" %></h1>
+        <% end -%>
+        <div>
+            <% ua = request.env["HTTP_USER_AGENT"]
+            if(ua.include?('Mobile')|| ua.include?('Android')) then %>
+                <% if s != "home" %>
+                    <%= form_tag("/search",:method => 'get') do %>
+                        <div class="Inputline">
+                            <i class="fas fa-search"></i>
+                            <%= text_field_tag :query,"#{params[:query]}",{class:"searchInput",placeholder: "曲名や歌詞で検索"} %>
+                      </div>
+                    <% end %>
+                <% end %>
+            <% else %>
+                <%= form_tag("/search",:method => 'get') do %>
+                    <div class="Inputline">
+                        <i class="fas fa-search"></i>
+                        <%= text_field_tag :query,"#{params[:query]}",{class:"searchInput",placeholder: "曲名や歌詞で検索"} %>
+                  </div>
+                <% end %>
+            <% end %>
+            
+        </div>
+    </div>
+</header>

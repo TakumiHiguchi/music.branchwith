@@ -1,0 +1,90 @@
+$inpWidth:1000px;
+$headerHeight:50px;
+$maxWidth:100%;
+@media screen and (min-width: 1024px) {
+    //--------------------------------------------------------------------------------
+    //                                   フッター
+    //--------------------------------------------------------------------------------
+    .footer_box{
+        width:100%;
+        padding:20px 0;
+        background:white;
+        display:flex;
+        justify-content:center;
+        align-items: start;
+        .footer_inner{
+            width:$inpWidth;
+            border-top: solid 1px #e0e0e0;
+            text-align:center;
+            .footer_ul{
+                display:flex;
+                justify-content:center;
+                width:100%;
+                margin:20px 0;
+                list-style: none;
+                .footer_li{
+                    padding:0 10px;
+                    border-right: solid 1px #e0e0e0;
+                    a{
+                        font-size:0.8em;
+                    }
+                }
+                .footer_li_last{
+                    padding:0 10px;
+                    a{
+                        font-size:0.8em;
+                    }
+                }
+            }
+            p{
+                font-size:0.8em;
+                color:#808080;
+                margin-bottom:10px;
+            }
+        }
+    }
+}
+//---------------------------------------------------------------
+//                             スマホ
+//---------------------------------------------------------------
+@media screen and (max-width: 1023px) {
+
+    .footer_box{
+        width:100%;
+        padding:20px 0 140px 0;
+        background:white;
+        display:flex;
+        justify-content:center;
+        align-items: start;
+        .footer_inner{
+            width:90%;
+            text-align:center;
+            .footer_ul{
+                display:flex;
+                justify-content:center;
+                flex-wrap:wrap;
+                width:100%;
+                margin:20px 0;
+                list-style: none;
+                    .footer_li{
+                    padding:0 10px;
+                    border-right: solid 1px #e0e0e0;
+                    a{
+                        font-size:0.6em;
+                    }
+                }
+                .footer_li_last{
+                    padding:0 10px;
+                    a{
+                    font-size:0.6em;
+                    }
+                }
+            }
+            p{
+                font-size:0.8em;
+                color:#808080;
+                margin-bottom:10px;
+            }
+        }
+    }
+}

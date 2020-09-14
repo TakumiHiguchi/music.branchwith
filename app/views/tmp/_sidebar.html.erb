@@ -1,0 +1,24 @@
+<%= stylesheet_link_tag "sidebar", :media => "all" %>
+<aside class="sub_flame">
+	<% if status == "lyric" %>
+		<div class="sub_container">
+			<div class="music_intbox">
+				<%= image_tag @lyric["result"]["jucket"].to_s, alt: '#{@lyric["result"]["artist"]}の#{@lyric["result"]["title"].}のジャケット'%>
+			</div>
+		</div>
+		<div class="sub_container">
+			<%= render 'tmp/side/share' %>
+		</div>
+		<div class="sub_container" style="padding-top:20px;">
+			<%= render 'tmp/side/pop_lyList' %>
+		</div>
+	<% elsif status == "instagram" %>
+		<div class="sub_container">
+			<%= image_tag "insQR.jpeg" %>
+		</div>
+	<% else %>
+		<div class="sub_container">
+			z
+		</div>
+	<% end %>
+</aside>

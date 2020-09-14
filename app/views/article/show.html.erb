@@ -1,0 +1,37 @@
+<%= stylesheet_link_tag "contentStyle", :media => "all" %>
+<%= render 'tmp/header' ,{s:""}%>
+<main class="main_flame">
+    <div class="main_inner">
+        <div class="article_show">
+            <div class="thum">
+				<%= image_tag @article["result"]["thumbnail"], class: '' , alt: "#{@article["result"]["title"]}のサムネイル"%>
+            </div>
+            <h1 class="inpPost-h1"><%= @article["result"]["title"] %></h1>
+            <div class="inpPost-auther_date_box">
+                <div>
+                    <span>編集: ひいらぎ</span>
+                    <span>最終更新： <time>a</time></span>
+                </div>
+            </div>
+            <div class="toc_box">
+                <dl id="index">
+                    <dt>目次</dt>
+                </dl>
+            </div>
+            <div class="main_cont">
+				<div class="articleBox pMS">
+                    <%= @article["result"]["content"].to_s.html_safe %>
+                </div>
+            </div>
+        </div>
+        <% if(@ua.include?('Mobile')|| @ua.include?('Android')) then %>
+        <% else %>
+	        <div class="sidebar">
+            <%= render 'tmp/sidebar',{status:""} %>
+            <% @article["result"]["tags"].each do |tag| %>
+                <a href="/tag/<%= tag["key"] %>"><%= tag["name"] %></a>
+			<% end %>
+	        </div>
+	    <% end %>
+    </div>
+</main>

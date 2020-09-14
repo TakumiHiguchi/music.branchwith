@@ -1,0 +1,28 @@
+<div class="share">
+    <div class="icon flex-jus-between">
+        <a class="ic-fab flex-jus-center" href="https://twitter.com/intent/tweet?url=<%=request.url%>&text=<%=@lyric["result"]["artist"]%>の<%=@lyric["result"]["title"]%>の歌詞&hashtags=<%= @lyric["result"]["artist"] %>,<%=@lyric["result"]["title"]%>" target="_blank" rel="nofollow noopener noreferrer">
+            <div>
+                <div class="icon-fab flex-jus-center"><i class="fab fa-twitter"></i></div>
+                <div class="icon-con">共有</div>
+            </div>
+        </a>
+        <a class="ic-fab flex-jus-center" href="https://social-plugins.line.me/lineit/share?url={<%=request.url%>}" target="_blank" rel="nofollow noopener noreferrer">
+            <div>
+                <div class="icon-fab flex-jus-center"><i class="fab fa-line"></i></div>
+                <div class="icon-con">共有</div>
+            </div>
+        </a>
+        <a class="ic-fab flex-jus-center" href="<%= @lyric["result"]["iTunesUrl"] %>" target="_blank" rel="nofollow noopener noreferrer">
+            <div>
+                <div class="icon-fab flex-jus-center"><i class="fab fa-apple"></i></div>
+                <div class="icon-con">apple</div>
+            </div>
+        </a>
+        <a class="ic-fab flex-jus-center" href="<%= @lyric["result"]["amazonUrl"] %>" target="_blank" rel="nofollow noopener noreferrer">
+            <div>
+                <div class="icon-fab flex-jus-center"><i class="fab fa-amazon"></i></div>
+                <div class="icon-con">amazon</div>
+            </div>
+        </a>
+    </div>
+</div>

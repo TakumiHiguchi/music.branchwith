@@ -1,0 +1,363 @@
+$main_color:#00aced;
+//トップページのヘッダー
+.top_header{
+    .main_header{
+        background: linear-gradient(90deg, #f2e7e7, #6dd5fa, #00acee);
+        background-size: 600% 600%;
+        -webkit-animation: back-animation 15s linear 0s infinite normal;
+        -moz-animation: back-animation 15s ease 0 infinite;
+        animation: back-animation 15s ease 0 infinite;
+    }
+}
+
+.fns-h2{
+    width:calc(100% - 20px);
+    padding:0 10px 10px 10px;
+    margin-bottom:10px;
+    border-bottom:1px solid #f0f0f0;
+    a{
+    	color:#aaa;
+    	font-size:0.8em;
+    }
+}
+//トップページ記事リスト
+.topaListContainer{
+	flex-wrap:wrap;
+	align-items: stretch;
+	width:100%;
+	.topaList-left,.topaList-right{
+		width:calc(50% - 12px);
+		border-bottom:1px solid #f0f0f0;
+		text-decoration:none;
+        &:hover{
+           	text-decoration:underline;
+        }
+		.topaImage{
+			width:100%;
+			height:114px;
+			background:#f8f8f8;
+			img{
+				width:100%;
+				height:114px;
+				object-fit:cover;
+			}
+		}
+
+	}
+	.topaList-left{
+		padding:10px 4px 10px 8px;
+		border-right:1px solid #f0f0f0;
+	}
+	.topaList-right{
+		padding:10px 6px 10px 3px;
+	}
+}
+//トップページ下リンク
+.inf-fav-con{
+   	display:block;
+   	width:calc(100% - 40px);
+  	margin:20px 0px;
+  	text-decoration: none;
+	&:hover .inf-fav{
+    	background: rgb(29, 161, 242);
+   		color:white;
+    }
+  	.inf-fav{
+   		width:100%;
+   		height:40px;
+   		border-radius:50px;
+   		background: white;
+   		color:rgb(29, 161, 242);
+   		border:1px solid rgb(29, 161, 242);
+   		cursor: pointer;
+   		font-size:1em;
+   	}
+}
+//インスタグラムしたボタン
+.ins-fav-con{
+   	display:block;
+   	width:calc(100% - 20px);
+	padding:0 10px;
+  	text-decoration: none;
+	&:hover .ins-fav{
+    	background: rgb(29, 161, 242);
+   		color:white;
+    }
+  	.ins-fav{
+   		width:100%;
+   		height:40px;
+   		border-radius:50px;
+   		background: white;
+   		color:rgb(29, 161, 242);
+   		border:1px solid rgb(29, 161, 242);
+   		cursor: pointer;
+   		font-size:1em;
+   	}
+}
+//インスタグラムユーザー見出し
+.instagram-user{
+	display:flex;
+	height:30px;
+	width:calc(100% - 20px);
+	border-bottom:1px solid #f0f0f0;
+	padding:0 10px 5px 10px;
+	text-decoration:none;
+    &:hover{
+    	text-decoration:underline;
+    }
+	img{
+		display:block;
+		height:100%;
+	}
+	div{
+		padding-left:10px;
+		line-height:30px;
+		font-weight:bold;
+	}
+}
+//インスタグラムコンテンツ
+.instagram{
+	flex-wrap:wrap;
+	width:100%;
+	border-bottom:1px solid #f0f0f0;
+	margin-bottom:10px;
+	a{
+		display:block;
+		width:50%;
+		-webkit-transition: -webkit-transform 0.1s linear;
+	    transition: transform 0.1s linear;
+	    &:hover{
+	        -webkit-transform: scale(1.05);
+	        transform: scale(0.95);
+	    }
+		img{
+			width:100%;
+		}
+	}
+}
+//--------------------------------------------------------------------------------
+//                                   PC
+//--------------------------------------------------------------------------------
+@media screen and (min-width: 1000px) {
+	//トップページ白い部分
+	.toprap{
+		position:relative;
+		margin-top:450px;
+		z-index:100;
+	    width:100%;
+	    margin-bottom:10px;
+	    .topContainer{
+	        align-items:flex-start;
+	        width:1000px;
+	        .left{
+	            width:250px;
+	            padding:10px 0;
+	            background:white;
+	            border-radius:10px;
+	        }
+	        .center{
+	            width:430px;
+	            padding:10px 0;
+	            background:white;
+	            border-radius:10px;
+	        }
+	        .right{
+	            width:300px;
+	        }
+	    }
+	}
+	//ページ上部文字
+	.top_s_block{
+		position:absolute;
+		z-index:1;
+	    width:100%;
+	    height:400px;
+	    padding:25px 0 125px 0;
+	    display:flex;
+	    justify-content:center;
+	    align-items: center;
+	    background: linear-gradient(90deg, #f2e7e7, #6dd5fa, #00acee);
+	    background-size: 600% 600%;
+	    -webkit-animation: back-animation 15s linear 0s infinite normal;
+	    -moz-animation: back-animation 15s ease 0 infinite;
+	    animation: back-animation 15s ease 0 infinite;
+	}
+    .top_s_inner{
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        flex-direction: column;
+        width:1000px;
+        height:400px;
+        .head{
+            font-size:3em;
+        }
+        .bottom{
+            width:calc(1000px * 0.65);
+            margin-top:10px;
+        }
+    }
+    //sns 画面右で使用
+    .side-sns-Container{
+        width:100%;
+        padding:10px 0;
+        background:white;
+        border-radius:10px;
+        margin-bottom:10px;
+    }
+    //プライバシーページ
+    .artistToptmp{
+        width:100%;
+        padding:20px 0;
+        .fix-box{
+            width:960px;
+            background:white;
+            padding:20px;
+            h1{
+                font-size:1.2em;
+                font-weight:bold;
+                margin-bottom:10px;
+            }
+            h2,h3,h4,h5,h6{
+                position: relative;
+                font-weight:bold;
+                font-size:1em;
+                color:#808080;
+                padding:2px 30px;
+                margin:10px 0;
+                &:before{
+                    position: absolute;
+                    top:50%;
+                    left:10px;
+                    -webkit-transform : translateY(-50%);
+                    transform : translateY(-50%);
+                    content:'';
+                    background:$main_color;
+                    width:0.8em;
+                    height:0.8em;
+                }
+            }
+            p{
+                margin-bottom:10px;
+            }
+        }
+    }
+
+}
+//--------------------------------------------------------------------------------
+//                                   スマホ
+//--------------------------------------------------------------------------------
+@media screen and (max-width: 1000px) {
+    .side-sns-Container{
+        margin-bottom:20px;
+    }
+	//トップページ白い部分
+	.toprap{
+	    width:100%;
+	    .topContainer{
+	        align-items:flex-start;
+	        flex-wrap:wrap;
+	        width:100%;
+	        .left{
+	            width:100%;
+	            padding:10px 0;
+	            background:white;
+	            order:3;
+	        }
+	        .center{
+	            width:100%;
+	            padding:10px 0;
+	            background:white;
+	            order:1;
+	        }
+	        .right{
+	            width:100%;
+	            padding:10px 0 20px 0;
+	            background:white;
+	            order:2;
+	        }
+	    }
+	}
+	//ページ上部文字
+	.top_s_block{
+	    width:100%;
+	    height:300px;
+	    display:flex;
+	    justify-content:center;
+	    align-items: center;
+	    background: linear-gradient(90deg, #f2e7e7, #6dd5fa, #00acee);
+	    background-size: 600% 600%;
+	    -webkit-animation: back-animation 15s linear 0s infinite normal;
+	    -moz-animation: back-animation 15s ease 0 infinite;
+	    animation: back-animation 15s ease 0 infinite;
+	}
+    .top_s_inner{
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        flex-direction: column;
+        width:100%;
+        height:200px;
+        .head{
+            font-size:1.5em;
+        }
+        .bottom{
+            width:80vw;
+            margin-top:10px;
+            font-size:0.8em;
+        }
+    }
+    //プライバシーページ
+    .artistToptmp{
+        width:100%;
+        .fix-box{
+            width:980px;
+            background:white;
+            padding:10px;
+            h1{
+                font-size:1.2em;
+                font-weight:bold;
+                margin-bottom:10px;
+            }
+            h2,h3,h4,h5,h6{
+                position: relative;
+                font-weight:bold;
+                font-size:1em;
+                color:#808080;
+                padding:2px 30px;
+                margin:10px 0;
+                &:before{
+                    position: absolute;
+                    top:50%;
+                    left:10px;
+                    -webkit-transform : translateY(-50%);
+                    transform : translateY(-50%);
+                    content:'';
+                    background:$main_color;
+                    width:0.8em;
+                    height:0.8em;
+                }
+            }
+            p{
+                margin-bottom:10px;
+            }
+        }
+    }
+}
+//アニメーション
+@-webkit-keyframes back-animation{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes back-animation {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes back-animation{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+

@@ -1,0 +1,35 @@
+<%# タイトル等設定 %>
+<% provide(:title, "新着楽曲 | music.branchwith") %>
+<% provide(:description, "日本国内最大級の音楽サイト！27万曲以上の歌詞全文や、歌詞解釈、音楽ニュースまで、幅広いコンテンツを扱っています。音楽のことならmusic.branchwithで全て解決！") %>
+<% provide(:index,"noindex") %>
+<%#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------%>
+<%= render 'tmp/header',{s:""} %>
+<main class="main_flame">
+    <div class="main_inner">
+        <div>
+            <div class="main_container_n">
+            	<div class="kanren_musicList_block">
+				    <h1>新着楽曲</h1>
+				    <div class="bottom">
+				        <% @lyricsData["result"].each do |pas| %>
+				        	<a href="/lyrics/<%= pas["key"] %>">
+						        <% if pas["jucket"].blank? %>
+						        	<div class="recom-noimg flex-jus-center">noimage</div>
+						        <% else %>
+						        	<%= image_tag pas["jucket"].to_s, class: '' , alt: "#{pas["artist"]}の#{pas["title"]}のジャケット"%>
+						        <% end %>
+						        <div class="cont1"><%= pas["title"] %></div><div class="cont2"><%= pas["artist"] %></div>
+					        </a>
+				        <% end %>
+				    </div>
+				</div>
+            </div>
+        </div>
+        <div class="sidebar">
+			<%= render 'tmp/sidebar',{status:""} %>
+        </div>
+    </div>
+</main>
+
+
+<%= render 'tmp/footer' %>

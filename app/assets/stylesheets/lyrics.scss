@@ -1,0 +1,157 @@
+
+h2.lyrich2{
+	padding:0 0 0 20px;
+}
+//歌詞表示部分
+.kasiData_box{
+    width:calc(100% - 40px);
+    padding:10px 20px;
+    border-bottom: dashed 1px #e0e0e0;
+    display:flex;
+    justify-content:space-between;
+    align-items: flex-end;
+    .lyristDatabox{
+        width:100%;
+        display:flex;
+        .left{
+            width:20%;
+            margin-right:10px;
+            img{
+                width:100%;
+            }
+        }
+        .right{
+            width:calc(80% - 10px);
+        }
+    }
+}
+.lylics_box{
+	margin-top:10px;
+	padding:0 20px;
+}
+
+
+//--------------------------------------------------------------------------------
+//                                   PC
+//--------------------------------------------------------------------------------
+@media screen and (min-width: 1000px) {
+	.kanren_musicList_block{
+	    h2,h1{
+	    	margin-bottom:20px;
+	    }
+	 }
+	 //ページ下部関連曲部分
+	.kanren_musicList_block{
+	    padding:10px 20px;
+	    width:calc(100% - 40px);
+	    .msline{
+	    	width:100%;
+	    	a{
+	    		font-size:0.8em;
+	    	}
+	    }
+	    .bottom{
+	        width:100%;
+	        display:flex;
+	        flex-wrap:wrap;
+	        a{
+	        	display:block;
+	            width:calc(25% - 4px);
+	            transition: all  0.5s ease;
+	            margin:0 2px 10px 2px;
+	            text-decoration:none;
+	            &:hover .cont1{
+	            	text-decoration:underline;
+	            }
+	            img{
+	            	display:block;
+				    width: 100%;
+				    height:159px;
+	                object-fit: cover;
+	                margin-bottom:10px;
+	            }
+	           	.recom-noimg{
+	           		width: 100%;
+				    height:159px;
+				    background:#f0f0f0;
+	       			font-size:1em;
+	       			margin-bottom:10px;
+	           	}
+	            .cont1{
+	                font-size:0.8em;
+	                color:initial;
+	                margin:5px 0;
+	                width:100%;
+	            }
+	            .cont2{
+	                font-size:0.8em;
+	                color:#808080;
+	                width:100%;
+	                text-align:right;
+	            }
+	        }
+	    }
+	}
+}
+//--------------------------------------------------------------------------------
+//                                   スマホ
+//--------------------------------------------------------------------------------
+@media screen and (max-width: 1000px) {
+	.kanren_musicList_block{
+	    h2,h1{
+	    	margin-bottom:10px;
+	    }
+	 }
+	 //ページ下部関連曲部分
+	.kanren_musicList_block{
+	    padding:10px;
+	    width:calc(100% - 20px);
+	    .msline{
+	    	width:100%;
+	    	a{
+	    		font-size:0.8em;
+	    	}
+	    }
+	    .bottom{
+	        width:100%;
+	        display:flex;
+	        flex-wrap:wrap;
+	        a{
+	        	display:block;
+	            width:calc(50vw - 14px);
+	            transition: all  0.5s ease;
+	            margin:0 2px 10px 2px;
+	            text-decoration:none;
+	            &:hover .cont1{
+	            	text-decoration:underline;
+	            }
+	            img{
+	            	display:block;
+				    width: calc(50vw - 14px);
+				    height:calc(50vw - 14px);
+	                object-fit: cover;
+	                margin-bottom:10px;
+	            }
+	           	.recom-noimg{
+	           		width: calc(50vw - 14px);
+				    height:calc(50vw - 14px);
+				    background:#f0f0f0;
+	       			font-size:1em;
+	       			margin-bottom:10px;
+	           	}
+	            .cont1{
+	                font-size:0.8em;
+	                color:initial;
+	                margin:5px 0;
+	                width:100%;
+	            }
+	            .cont2{
+	                font-size:0.8em;
+	                color:#808080;
+	                width:100%;
+	                text-align:right;
+	            }
+	        }
+	    }
+	}
+}
