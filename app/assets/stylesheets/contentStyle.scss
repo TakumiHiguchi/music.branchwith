@@ -1,0 +1,44 @@
+blockquote{
+    margin:10px 0;
+}
+p{
+    line-height:2em;
+    margin:0 0 10px 10px;
+}
+ul,ol{
+    margin:20px 0 10px 30px;
+}
+ .bold{
+    font-weight:bold;
+}
+.quoteBox{
+    width:100%;
+    font-size:0.8em;
+    text-align:right;
+}
+h2{
+    border-bottom: 1px solid #ddd;
+    padding-bottom: .1em;
+    font-size:1.2em;
+    font-weight:bold;
+    margin-bottom:30px;
+}
+h3{
+    position: relative;
+    font-weight:bold;
+    font-size:1em;
+    color:#808080;
+    padding:2px 18px;
+    margin:0px 0 20px 0;
+    &:before{
+        position: absolute;
+        top:50%;
+        left:10px;
+        -webkit-transform : translateY(-50%);
+        transform : translateY(-50%);
+        content:'';
+        background:$main_color;
+        width:0.8em;
+        height:0.8em;
+    }
+}
