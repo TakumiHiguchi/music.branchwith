@@ -16,7 +16,7 @@ class HomeController < ApplicationController
       response = nil
       response1 = nil
       https.start do
-        response = https.get("/api/v1/webgui/article")
+        response = https.get("/api/v1/webgui/article?limit=20")
       end
       @articleDatas=JSON.parse(response.body)
       https.start do
