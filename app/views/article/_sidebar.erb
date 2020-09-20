@@ -1,0 +1,87 @@
+
+<div class="sidebar">
+  <aside class="sub_flame" style="padding:10px 0 0 0;">
+    <div class="share">
+      <div class="icon flex-jus-between">
+        <a class="ic-fab flex-jus-center" 
+          href="https://twitter.com/intent/tweet?url=<%=request.url%>&text=<%=article_data['title'].gsub(/[[:space:]]/, '').gsub(/\|/, ' ') %>&hashtags=<% article_data['tags'].map do |tag| %><%=tag["name"].gsub(/[[:space:]]/, '')%>,<% end %>" 
+          target="_blank" 
+          rel="nofollow noopener noreferrer"
+        >
+          <div>
+            <div class="icon-fab flex-jus-center"><i class="fab fa-twitter"></i></div>
+            <div class="icon-con">共有</div>
+          </div>
+        </a>
+        <a class="ic-fab flex-jus-center" href="https://social-plugins.line.me/lineit/share?url={<%=request.url%>}" target="_blank" rel="nofollow noopener noreferrer">
+          <div>
+            <div class="icon-fab flex-jus-center"><i class="fab fa-line"></i></div>
+            <div class="icon-con">共有</div>
+          </div>
+        </a>
+        <a class="ic-fab flex-jus-center" href="" target="_blank" rel="nofollow noopener noreferrer">
+          <div>
+            <div class="icon-fab flex-jus-center"><i class="fab fa-apple"></i></div>
+            <div class="icon-con">apple</div>
+          </div>
+        </a>
+        <a class="ic-fab flex-jus-center" href="" target="_blank" rel="nofollow noopener noreferrer">
+          <div>
+            <div class="icon-fab flex-jus-center"><i class="fab fa-amazon"></i></div>
+            <div class="icon-con">amazon</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </aside>
+  <aside class="sub_flame" style="padding:10px 0 0 0;">
+    <div class="sub_container">
+      <div class="headline">次の記事</div>
+      <% article_list.each do |data| %>
+        <a href="/article/<%= data["key"] %>" class="next_article_container">
+          <div class="left">
+            <%= image_tag data["thumbnail"], class: '' , alt: "#{data["title"]}のサムネイル"%>
+          </div>
+          <div class="right">
+            <p class="toptitle"><%= data["title"].byteslice(0, 52).scrub('') %><% if data["title"].bytesize > 52 %>...<%end%></p>
+            <div class="dest">ひいらぎ</div>
+            <div class="dest"><%= Time.at(data["releaseTime"].to_i).strftime("%Y年%m月%d日に公開") %></div>
+          </div>
+        </a>
+      <% end %>
+    </div>
+  </aside>
+  <aside class="sub_flame" style="padding:10px 0 0 0;">
+    <div class="sub_container">
+      <% tag_list.each do |tag| %>
+        <a href="/tag/<%= tag['key'] %>" class="article_tag_list">
+          <div class="title">#<%= tag['name'] %></div>
+          <div class="imageContainer">
+            <% if tag['thumbnail'].nil? %>
+              noimage
+            <% else %>
+              <%= image_tag tag['thumbnail'] %>
+            <% end %>
+          </div>
+        </a>
+        <% tag['related_article'].each do |article| %>
+          <a href="/article/<%= article['key'] %>" class="next_article_container">
+            <div class="left">
+              <%= image_tag article["thumbnail"], class: '' , alt: "#{article["title"]}のサムネイル"%>
+            </div>
+            <div class="right">
+              <p class="toptitle"><%= article["title"].byteslice(0, 52).scrub('') %><% if article["title"].bytesize > 52 %>...<%end%></p>
+              <div class="dest">ひいらぎ</div>
+              <div class="dest"><%= Time.at(article["releaseTime"].to_i).strftime("%Y年%m月%d日に公開") %></div>
+            </div>
+		      </a>
+        <% end %>
+      <% end %>
+      <a class="nextbtn" href="/tag" style="margin:10px 0 0 0;">
+        他のタグを見る
+      </a>
+    </div>
+  </aside>
+
+
+</div>

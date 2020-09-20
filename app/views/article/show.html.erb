@@ -24,14 +24,12 @@
                 </div>
             </div>
         </div>
-        <% if(@ua.include?('Mobile')|| @ua.include?('Android')) then %>
-        <% else %>
-	        <div class="sidebar">
-            <%= render 'tmp/sidebar',{status:""} %>
-            <% @article["result"]["tags"].each do |tag| %>
-                <a href="/tag/<%= tag["key"] %>"><%= tag["name"] %></a>
-			<% end %>
-	        </div>
+        <% if(!@ua.include?('Mobile') && !@ua.include?('Android')) then %>
+            <%= render 'article/sidebar',
+                {article_list: @article["result"]["next_articles"], 
+                tag_list: @article["result"]["tags"], 
+                article_data: @article["result"]} 
+            %>
 	    <% end %>
     </div>
 </main>
