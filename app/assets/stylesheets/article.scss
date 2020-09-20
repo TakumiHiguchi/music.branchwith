@@ -27,34 +27,31 @@
         }
     }
 }
-.lv_H2 a{padding-left:10px;color:#494949;}
-.lv_H3 a{padding-left:30px;color:#494949;}
+.lv_H2 a{color:#494949;}
+.lv_H3 a{padding-left:20px;color:#494949;}
 .attrb{
     margin:20px 0;
 }
 .inpPost-auther_date_box{
-    display:flex;
-    align-items: center;
-    justify-content:space-between;
-    height:30px;
-    padding:10px 20px;
+    padding:10px 20px 0px 20px;
     background:white;
     color:#808080;
     border-bottom:1px solid #e0e0e0;
-    div{
-        display:flex;
-        align-items: center;
+    .tag_container{
+        padding-bottom:10px;
         a{
-            display:flex;
-            align-items: center;
-
-            margin-right:20px;
-            img{
-                height:100%;
-                width:30px;
-                margin-right:10px;
-                border:1px solid #f0f0f0;
-                border-radius:50%;
+            display:inline-block;
+            background: #00aced;
+            border-radius: 5000px;
+            padding: 5px 15px;
+            margin: 0 7px 0px 0;
+            height: 1em;
+            font-size:0.8em;
+            color: white;
+            line-height: 1em;
+            text-decoration:none;
+            &:hover{
+                text-decoration: underline;
             }
         }
     }
@@ -77,3 +74,4 @@
         object-fit: cover;
     }
 }
+
