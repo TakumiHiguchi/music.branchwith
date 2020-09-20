@@ -11,6 +11,9 @@ html, body, div, span, applet, object, h1, h2, h3, h4, h5, h6, p,blockquote, pre
 html,body{
     background:#f8f8f8;
 }
+.flex{
+    display:flex;
+}
 .flex-jus-between{
     display:flex;
     justify-content:space-between;

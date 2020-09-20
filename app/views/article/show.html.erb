@@ -1,35 +1,54 @@
 <%= stylesheet_link_tag "contentStyle", :media => "all" %>
 <%= render 'tmp/header' ,{s:""}%>
 <main class="main_flame">
-    <div class="main_inner">
-        <div class="article_show">
-            <div class="thum">
+  <div class="main_inner">
+    <div class="article_show">
+      <div class="thum">
 				<%= image_tag @article["result"]["thumbnail"], class: '' , alt: "#{@article["result"]["title"]}のサムネイル"%>
-            </div>
-            <h1 class="inpPost-h1"><%= @article["result"]["title"] %></h1>
-            <div class="inpPost-auther_date_box">
-                <div>
-                    <span>編集: ひいらぎ</span>
-                    <span>最終更新： <time>a</time></span>
-                </div>
-            </div>
-            <div class="toc_box">
-                <dl id="index">
-                    <dt>目次</dt>
-                </dl>
-            </div>
-            <div class="main_cont">
-				<div class="article_style">
-                    <%= @article["result"]["content"].to_s.html_safe %>
-                </div>
-            </div>
+      </div>
+      <h1 class="inpPost-h1"><%= @article["result"]["title"] %></h1>
+      <div class="inpPost-auther_date_box">
+        <div class="flex" style="margin-bottom:10px;">
+          <span style="display:block;margin-right:10px;">編集： ひいらぎ</span>
+          <span>最終更新： <time><%= Time.at(@article["result"]["releaseTime"].to_i).strftime("%Y年%m月%d日") %></time></span>
         </div>
-        <% if(!@ua.include?('Mobile') && !@ua.include?('Android')) then %>
-            <%= render 'article/sidebar',
-                {article_list: @article["result"]["next_articles"], 
-                tag_list: @article["result"]["tags"], 
-                article_data: @article["result"]} 
-            %>
-	    <% end %>
+        <div class="flex tag_container">
+          <% @article["result"]["tags"].each do |tag| %>
+            <a href="/tag/<%= tag['key'] %>"># <%= tag["name"] %></a>
+          <% end %>
+        </div>
+      </div>
+      <div class="toc_box">
+        <dl id="index">
+          <dt>目次</dt>
+        </dl>
+      </div>
+      <div class="main_cont">
+			  <div class="article_style">
+          <%= @article["result"]["content"].to_s.html_safe %>
+        </div>
+      </div>
     </div>
+    <% if(!@ua.include?('Mobile') && !@ua.include?('Android')) then %>
+      <%= render 'article/sidebar',
+        {article_list: @article["result"]["next_articles"], 
+        tag_list: @article["result"]["tags"], 
+        article_data: @article["result"]} 
+      %>
+	  <% end %>
+  </div>
 </main>
+<script>
+  $(function(){
+    var countId = 0;
+    //目次
+    $(".article_style h2,.article_style h3").each(function(){
+      countId++;
+      var ttl = $(this).text();
+      this.id = 'ttl-' + countId;
+      var lv = $(this).prop("tagName");
+      $("#index").append('<dd class="lv_'+lv+'"><a href="#'+this.id+'">'+ttl+'</a></dd>');
+    });
+  });
+</script>
+
