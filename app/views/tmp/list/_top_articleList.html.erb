@@ -1,10 +1,8 @@
 <% count=0 #左右カウント %>
 <div class="flex-jus-center topaListContainer">
   <% articles.each do |pass| %>
-    <% count+=1
-      title = pass["title"].to_s
-    %>
-    <a href='/article/<%=pass["key"]%>' class="
+    <% count+=1 %>
+    <div class="
       <% if count%2 == 1 %>
         topaList-left
       <% else %>
@@ -12,11 +10,17 @@
       <% end %>
     ">
       <% if pass["thumbnail"] then %>
-        <div class="topaImage"><%= image_tag pass["thumbnail"], class: '' , alt: "#{title}のサムネイル"%></div>
+        <a href='/article/<%=pass["key"]%>' class="topaImage">
+          <%= image_tag pass["thumbnail"], class: '' , alt: "#{pass["title"]}のサムネイル"%>
+        </a>
       <% else %>
         <div class="topaImage"><Img src="https://i.ytimg.com/vi/ce_9Ze-gf2o/hqdefault.jpg"></div>
       <% end %>
-      <div class="title"><%= title %></div>
-    </a>
+      <a href='/article/<%=pass["key"]%>' class="title"><%= pass["title"] %></a>
+      <p class="word_count"><%= strip_tags(pass["content"]).length %>文字</p>
+      <% if pass["tags"].length > 0 %>
+        <a href="tag/<%= pass["tags"][0]['key'] %>" class="label"><%= pass["tags"][0]['name'] %></a>
+      <% end %>
+    </div>
   <% end %>
 </div>
