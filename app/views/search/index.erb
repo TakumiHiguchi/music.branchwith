@@ -1,0 +1,20 @@
+<%= stylesheet_link_tag "contentStyle", :media => "all" %>
+<%= render 'tmp/header' ,{s:""}%>
+<main>
+  <div class="serach_head">
+    <h1>
+      <%= params[:query] %>の<% if params[:model] == 'lyric' %>歌詞<% else %>記事<% end %>検索結果
+    </h1>
+  </div>
+  <div class="main_flame">
+    <div class="main_inner">
+      <% if(!@ua.include?('Mobile') && !@ua.include?('Android')) then %>
+        <%= render 'search/sidebar' %>
+      <% end %>
+      <div class="main_container_right">
+        <%= render 'search/list',{type: params[:model],result: @result['result']} %>
+      </div>
+    </div>
+  </div>
+</main>
+

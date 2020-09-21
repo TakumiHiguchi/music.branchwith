@@ -4,7 +4,11 @@
     <div class="main_container_no_c">
       <div class="tag_container flex" style="margin-bottom:10px">
         <div class="image_container">
-          <%= image_tag @tag['thumbnail'], class: '' , alt: "#{@tag['name']}のサムネイル"%>
+          <% if @tag['thumbnail'].nil? %>
+            no image
+          <% else %>
+            <%= image_tag @tag['thumbnail'], class: '' , alt: "#{@tag['name']}のサムネイル"%>
+          <% end %>
         </div>
         <div class="tag_container_inf">
           <h1><%= @tag['name'] %></h1>

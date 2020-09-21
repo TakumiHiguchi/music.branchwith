@@ -11,15 +11,15 @@
                     <%= form_tag("/search",:method => 'get') do %>
                         <div class="Inputline">
                             <i class="fas fa-search"></i>
-                            <%= text_field_tag :query,"#{params[:query]}",{class:"searchInput",placeholder: "曲名や歌詞で検索"} %>
+                            <%= text_field_tag :query,"#{params[:query]}",{class:"searchInput",placeholder: "曲名やアーティスト名で検索"} %>
                       </div>
                     <% end %>
                 <% end %>
             <% else %>
-                <%= form_tag("/search",:method => 'get') do %>
+                <%= form_tag("/search?m=article",:method => 'get') do %>
                     <div class="Inputline">
                         <i class="fas fa-search"></i>
-                        <%= text_field_tag :query,"#{params[:query]}",{class:"searchInput",placeholder: "曲名や歌詞で検索"} %>
+                        <%= text_field_tag :query,"#{params[:query]}",{class:"searchInput",placeholder: "曲名やアーティスト名で検索"} %>
                   </div>
                 <% end %>
             <% end %>

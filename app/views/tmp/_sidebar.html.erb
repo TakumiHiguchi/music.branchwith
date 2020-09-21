@@ -10,7 +10,7 @@
 			<%= render 'tmp/side/share' %>
 		</div>
 		<div class="sub_container" style="padding-top:20px;">
-			<%= render 'tmp/side/pop_lyList' %>
+			<%= render 'tmp/side/lyrics_list' ,{lyrics: @poplyric['result'], label: '人気楽曲'}%>
 		</div>
 	<% elsif status == "instagram" %>
 		<div class="sub_container">

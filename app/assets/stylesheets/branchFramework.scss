@@ -64,6 +64,23 @@ html,body{
         color:#00acee;
     }
 }
+.scroll-y{
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display:none;
+    }
+}
+.scroll-x{
+    white-space: nowrap;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display:none;
+    }
+}
 
 //--------------------------------------------------------------------------------
 //                                   pc
@@ -91,13 +108,18 @@ html,body{
                 width:690px;
                 margin-right:10px;
                 margin-bottom:10px;
-                padding:20px 0;
                 background:white;
                 border-radius:10px;
             }
             .main_container_no_c{
                 width:690px;
                 margin-right:10px;
+                margin-bottom:10px;
+                border-radius:10px;
+            }
+            .main_container_right{
+                width:690px;
+                margin-left:10px;
                 margin-bottom:10px;
                 border-radius:10px;
             }
