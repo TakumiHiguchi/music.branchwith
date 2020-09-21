@@ -18,9 +18,9 @@ $(function() {
     let this_value = $(this).val();
     let param = '';
     switch(this_value){
-      case "lyric" : param = '&model=lyric';break;
-      case "article" : param = '&model=article';break;
-      case "特集記事" : param = '&model=lyric';break;
+      case "lyric" : param = 'model=lyric';break;
+      case "article" : param = 'model=article';break;
+      case "特集記事" : param = 'model=lyric';break;
     }
     let url = window.location.href
     // ソート機能の重複防止 
@@ -29,7 +29,11 @@ $(function() {
       url = url.replace(remove, '')
     };
     // ページ遷移
-    window.location.href = url + param;
+    if (url.indexOf('?') != -1) {
+      window.location.href = url + '&' + param;
+    }else{
+      window.location.href = url + '?' + param;
+    }
   });
 });
 
