@@ -3,7 +3,11 @@
 <main>
   <div class="serach_head">
     <h1>
-      <%= params[:query] %>の<% if params[:model] == 'lyric' %>歌詞<% else %>記事<% end %>検索結果
+      <% if params[:query].nil? || params[:query] == "" %>
+        <% if params[:model] == 'lyric' %>歌詞<% else %>記事<% end %>一覧
+      <% else %>
+        <%= params[:query] %>の<% if params[:model] == 'lyric' %>歌詞<% else %>記事<% end %>検索結果
+      <% end %>
     </h1>
   </div>
   <div class="main_flame">

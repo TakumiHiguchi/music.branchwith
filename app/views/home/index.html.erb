@@ -20,14 +20,12 @@
 		</div>
 		<div class="center">
 			<div class="fns-h2 flex-jus-between" style="margin-bottom:0;">
-				<h2>最新記事</h2>
+				<h2>最新記事</h2><a href="/search?model=article">もっと見る</a>
 			</div>
 			<%= render 'tmp/list/top_articleList',{articles: @articleDatas["result"]} %>
-			<a href="https://www.proofly.jp/nuser/music_branchwith" class="inf-fav-con">
-				<div class="inf-fav flex-jus-center">
-					music.branchwithの他の記事を見る
-				</div>
-			</a>
+			<div class="fns-h2" style="margin-bottom:0;text-align:right;">
+				<a href="/search?model=article">もっと見る</a>
+			</div>
 		</div>
 		<div class="right">
             <%= render 'tmp/sns/instagram' %>

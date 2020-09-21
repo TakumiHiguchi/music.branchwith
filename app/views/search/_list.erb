@@ -7,7 +7,7 @@
         </a>
         <div class='summary_container'>
           <a href="/lyrics/<%= data['key'] %>" class="lyrics_title"><%= data['title'] %></a>
-          <a href="/lyrics/<%= data['key'] %>" class="artist"><%= data['artist'] %></a>
+          <a href="/search?model=lyric&query=<%= data['artist'] %>" class="artist"><%= data['artist'] %></a>
           <p class="word_count"><%= strip_tags(data['lyrics']).length %>文字</p>
         </div>
       </div>

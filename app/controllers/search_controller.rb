@@ -12,9 +12,12 @@ class SearchController < ApplicationController
 
     model = params[:model]
     model = 'article' if params[:model].nil?
+    query = '?limit=20&model=' + model
+    query += '&q=' + params[:query] if !params[:query].nil?
+
     begin
       https.start do
-        @result = JSON.parse(https.get("/api/v1/mbw/search?model=" + model + '&q=' + params[:query] + '&limit=20').body)
+        @result = JSON.parse(https.get("/api/v1/mbw/search" + query ).body)
       end
     rescue
       render file: "/public/404.html", layout: false, status: 404
