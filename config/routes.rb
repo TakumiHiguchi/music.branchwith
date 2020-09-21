@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :article, only: [:show]
   resources :tag, only: [:index,:show]
   resources :lyrics, only: [:index,:show]
+  resources :search, only: [:index]
 end

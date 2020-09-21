@@ -1,0 +1,60 @@
+<% if type == 'lyric' %>
+  <div class='search_result flex-jus-between'>
+    <% result.each do |data| %>
+      <div class='search_list_wrap search_list_count_4'>
+        <a class='image_container' href="/lyrics/<%= data['key'] %>">
+          <div class='image_wrap' style="background-image: url(<%= data['jucket'] %>)"></div>
+        </a>
+        <div class='summary_container'>
+          <a href="/lyrics/<%= data['key'] %>" class="lyrics_title"><%= data['title'] %></a>
+          <a href="/lyrics/<%= data['key'] %>" class="artist"><%= data['artist'] %></a>
+          <p class="word_count"><%= strip_tags(data['lyrics']).length %>文字</p>
+        </div>
+      </div>
+    <% end %>
+    <% count = result.length % 4
+      count = 4 if count == 0
+      (4 - count).times do |data| %>
+      <div class='search_list_wrap search_list_count_4'>
+        <div class='image_container'>
+          <div class='image_wrap'>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class='search_result flex-jus-between'>
+    <% result.each do |data| %>
+      <div class='search_list_wrap search_list_count_4'>
+        <a class='image_container' href="/article/<%= data['key'] %>">
+          <div class='image_wrap' style="background-image: url(<%= data['thumbnail'] %>)"></div>
+        </a>
+        <div class='summary_container'>
+          <div class='search_tag_container flex scroll-x'>
+            <% data['tags'].each do |tag| %>
+              <a href="/tag/<%= tag['key'] %>" class="tag"><%= tag['name'] %></a>
+            <% end %>
+          </div>
+          <a href="/article/<%= data['key'] %>" class="title"><%= data['title'] %></a>
+          <p class="word_count"><%= strip_tags(data['content']).length %>文字</p>
+        </div>
+      </div>
+    <% end %>
+    <% count = result.length % 4
+      count = 4 if count == 0
+      (4 - count).times do |data| %>
+      <div class='search_list_wrap search_list_count_4'>
+        <div class='image_container'>
+          <div class='image_wrap'>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+<% if result.length == 0 %>
+  <div class='search_result flex-jus-between'>
+    <p>条件に一致する商品は見つかりませんでした。</p>
+  </div>
+<% end %>
