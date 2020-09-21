@@ -1,2 +1,30 @@
-<h1>Tag#show</h1>
-<p>Find me in app/views/tag/show.html.erb</p>
+<%= render 'tmp/header' ,{s:""}%>
+<main class="main_flame">
+  <div class="main_inner">
+    <div class="main_container_no_c">
+      <div class="tag_container flex" style="margin-bottom:10px">
+        <div class="image_container">
+          <%= image_tag @tag['thumbnail'], class: '' , alt: "#{@tag['name']}のサムネイル"%>
+        </div>
+        <div class="tag_container_inf">
+          <h1><%= @tag['name'] %></h1>
+          <p>投稿 <%= @tag['articles'].length %>件 楽曲 <%= @tag['lyrics'].length %>曲</p>
+          <p>トータルページビュー <%= @tag['articles'].length %>PV</p>
+        </div>
+      </div>
+      <div class="main_container_no_c flex">
+        <div class="tag_lyrics_list" style="margin-right:10px">
+          <%= render 'tmp/side/lyrics_list' ,{lyrics: @tag['lyrics'], label: '関連楽曲'}%>
+        </div>
+        <div class="tag_article_list">
+          <%= render 'tmp/list/top_articleList',{articles: @tag['articles']} %>
+        </div>
+      </div>
+    </div>
+    <% if(!@ua.include?('Mobile') && !@ua.include?('Android')) then %>
+      <%= render 'tag/sidebar',
+        {} 
+      %>
+	  <% end %>
+  </div>
+</main>
