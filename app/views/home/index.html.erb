@@ -16,13 +16,18 @@
 <div class="toprap flex-jus-center">
 	<main class="topContainer flex-jus-between">
 		<div class="left">
-			<%= render 'tmp/side/pop_lyList' %>
+			<%= render 'tmp/side/lyrics_list' ,{lyrics: @poplyric['result'], label: '人気楽曲'}%>
 		</div>
 		<div class="center">
 			<div class="fns-h2 flex-jus-between" style="margin-bottom:0;">
 				<h2>最新記事</h2>
 			</div>
-			<%= render 'tmp/list/top_articleList' %>
+			<%= render 'tmp/list/top_articleList',{articles: @articleDatas["result"]} %>
+			<a href="https://www.proofly.jp/nuser/music_branchwith" class="inf-fav-con">
+				<div class="inf-fav flex-jus-center">
+					music.branchwithの他の記事を見る
+				</div>
+			</a>
 		</div>
 		<div class="right">
             <%= render 'tmp/sns/instagram' %>

@@ -1,6 +1,6 @@
 <% count=0 #左右カウント %>
 <div class="flex-jus-center topaListContainer">
-    <% @articleDatas["result"].each do |pass| %>
+    <% articles.each do |pass| %>
         <% count+=1
             title = pass["title"].to_s
         %>
@@ -19,9 +19,5 @@
         </a>
         
     <% end %>
-    <a href="https://www.proofly.jp/nuser/music_branchwith" class="inf-fav-con">
-        <div class="inf-fav flex-jus-center">
-            music.branchwithの他の記事を見る
-        </div>
-    </a>
+
 </div>
