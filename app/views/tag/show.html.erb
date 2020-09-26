@@ -2,7 +2,7 @@
 <main class="main_flame">
   <div class="main_inner">
     <div class="main_container_no_c">
-      <div class="tag_container flex" style="margin-bottom:10px">
+      <div class="tag_container flex">
         <div class="image_container">
           <% if @tag['thumbnail'].nil? %>
             no image
@@ -16,9 +16,13 @@
           <p>トータルページビュー <%= @tag['articles'].length %>PV</p>
         </div>
       </div>
-      <div class="main_container_no_c flex">
-        <div class="tag_lyrics_list" style="margin-right:10px">
-          <%= render 'tmp/side/lyrics_list' ,{lyrics: @tag['lyrics'], label: '関連楽曲'}%>
+      <div class="main_container_no_c flex sm_tag_container">
+        <div class="tag_lyrics_list">
+          <% if(!@ua.include?('Mobile') && !@ua.include?('Android')) then %>
+            <%= render 'tag/lyrics_list' ,{lyrics: @tag['lyrics'], label: '関連楽曲'}%>
+          <% else %>
+            <%= render 'tag/sm_lyrics_list' ,{lyrics: @tag['lyrics'], label: '関連楽曲'}%>
+          <% end %>
         </div>
         <div class="tag_article_list">
           <%= render 'tmp/list/top_articleList',{articles: @tag['articles']} %>
@@ -32,3 +36,4 @@
 	  <% end %>
   </div>
 </main>
+<%= render 'tmp/footer' %>

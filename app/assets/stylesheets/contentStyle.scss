@@ -1,6 +1,5 @@
 $main_color:#00aced;
 .article_style{
-    padding: 0 20px;
     p{
         line-height:2em;
         margin:0 0 25px 0;
@@ -71,4 +70,31 @@ $main_color:#00aced;
             height:0.8em;
         }
     }
+}
+
+//--------------------------------------------------------------------------------
+//                                   pc
+//--------------------------------------------------------------------------------
+@media screen and (min-width: 1000px) {
+  .article_style{
+    padding: 0 20px;
+    iframe{
+      width:100%;
+      height:calc(650px * 0.5625);
+    }
+  }
+}
+
+//--------------------------------------------------------------------------------
+//                                   スマホ
+//--------------------------------------------------------------------------------
+@media screen and (max-width: 1000px) {
+  .article_style{
+    padding: 0 10px;
+    overflow: hidden;
+    iframe{
+      width:100%;
+      height:calc(calc(100vw - 20px) * 0.5625);
+    }
+  }
 }

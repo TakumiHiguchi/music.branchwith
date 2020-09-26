@@ -15,7 +15,7 @@ class ArticleController < ApplicationController
         begin
           response = nil
           https.start do
-            response = https.get("/api/v1/webgui/article/" + params[:id])
+            response = https.get("/api/v1/mbw/article/" + params[:id])
           end
           @article=JSON.parse(response.body)
           

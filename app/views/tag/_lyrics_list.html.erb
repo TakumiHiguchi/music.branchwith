@@ -1,0 +1,17 @@
+<div class="flex-jus-between fns-h2"><h2><%= label %></h2><a href="/search?model=lyric">もっと見る</a></div>
+<% lyrics.each do |lyda| %>
+    <a class="newlyric-container flex-jus-between" href="/lyrics/<%= lyda["key"] %>">
+        <div class="juc-image">
+              <% if lyda["jucket"].blank? %>
+                <div class="plL-noimg flex-jus-center">noimage</div>
+              <% else %>
+                <%= image_tag lyda["jucket"].to_s, class: '' , alt: "#{lyda["artist"]}の#{lyda["title"]}のジャケット"%>
+              <% end %>
+         </div>
+        <div class="lyric-con">
+            <div class="fas-cont1"><%= lyda["title"] %></div>
+            <div class="fas-cont2"><%= lyda["artist"] %></div>
+            <div class="fas-cont2"><i class="far fa-heart"></i><%= lyda["fav"]%></div>
+        </div>
+    </a>
+<% end %>
