@@ -2,6 +2,7 @@
   width:calc(100% - 20px);
   background:white;
   padding:10px;
+  margin-bottom:10px;
   .image_container{
     width:35%;
     height:133px;
@@ -36,4 +37,56 @@
   padding:10px 0;
   background:white;
   border-radius:10px;
+  margin-right:10px
+}
+
+//--------------------------------------------------------------------------------
+//                                   スマホ
+//--------------------------------------------------------------------------------
+@media screen and (max-width: 1000px) {
+  .tag_container{
+    margin-bottom:0px;
+  }
+  .sm_tag_container{
+    flex-wrap:wrap;
+    .tag_lyrics_list{
+      order:1;
+      width:100%;
+      border-radius:0;
+      margin-right:0px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .tag_article_list{
+      order:2;
+      width:100%;
+      border-radius:0;
+    }
+  }
+
+  .sm-newlyric-container{
+    width: 30%;
+    margin:0 5px;
+    text-decoration:none;
+    .juc-image{
+      width:100%;
+      img{
+        display:block;
+        width:100%;
+        height:100%;
+        object-fit: cover;
+        border-radius:10px;
+      }
+    }
+    .lyric-con{
+      .fas-cont2{
+        font-size:0.8em;
+      }
+    }
+    .sm-heart{
+      position:absolute;
+      background:white;
+      top:0;
+      left:0;
+    }
+  }
 }
