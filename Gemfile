@@ -55,3 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #####font-awesome
 gem 'font-awesome-sass', '~> 5.13.0'
+
+
+###メタタグ
+gem 'meta-tags'
