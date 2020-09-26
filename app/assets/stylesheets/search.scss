@@ -1,3 +1,4 @@
+
 .search_result{
   flex-wrap: wrap;
   align-items: flex-start;
@@ -70,17 +71,6 @@
     }
   }
 }
-.search_list_count_4{
-  width:calc(calc(100% - 45px) / 4);
-}
-.serach_head{
-  width:1000px;
-  margin:0 calc(50% - 500px);
-  padding:20px 0;
-  h1{
-    font-size:1.2em;
-  }
-}
 .serach_pagenation{
   width:100%;
 }
@@ -119,5 +109,39 @@
     border-bottom:#333 2px solid;
     border-right:#333 2px solid;
     transform:rotate(45deg)translateY(-30%);
+  }
+}
+//--------------------------------------------------------------------------------
+//                                   pc
+//--------------------------------------------------------------------------------
+@media screen and (min-width: 1000px) {
+  .serach_head{
+    width:1000px;
+    margin:0 calc(50% - 500px);
+    padding:20px 0;
+    h1{
+      font-size:1.2em;
+    }
+  }
+  .search_list_count_4{
+    width:calc(calc(100% - 45px) / 4);
+  }
+}
+
+//--------------------------------------------------------------------------------
+//                                   スマホ
+//--------------------------------------------------------------------------------
+@media screen and (max-width: 1000px) {
+  .serach_head{
+    padding:20px 10px;
+    h1{
+      font-size:1.2em;
+    }
+  }
+  .search_list_count_4{
+    width:calc(calc(100% - 10px) / 2);
+  }
+  .main_container_right{
+    padding:0 10px;
   }
 }

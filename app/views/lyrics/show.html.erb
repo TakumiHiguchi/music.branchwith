@@ -44,7 +44,7 @@
             
             <% if(ua.include?('Mobile')|| ua.include?('Android')) then %>
 				<div class="sub_container" style="padding-top:20px;">
-					<%= render 'tmp/side/pop_lyList' %>
+					<%= render 'tmp/side/pop_lyList', {lyrics: @poplyric['result'], label: 'おすすめ楽曲'} %>
 				</div>
             <% else %>
 	            <div class="main_container_n">
