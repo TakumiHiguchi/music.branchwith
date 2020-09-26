@@ -1,17 +1,5 @@
 
-.sub_flame{
-    width:300px;
-    border-radius:10px;
-}
-.sub_container{
-	width:calc(100% - 20px);
-	padding:10px;
-	border-radius:10px;
-	background:white;
-	img{
-		width:100%;
-	}
-}
+
 .ripple{
 	overflow: hidden;
     position: relative;
@@ -82,9 +70,21 @@
 
 
 @media screen and (min-width: 1000px) {
-	.sub_container{
-		margin-bottom:10px;
+	.sub_flame{
+		width:300px;
+		border-radius:10px;
 	}
+	.sub_container{
+		width:calc(100% - 20px);
+		padding:10px;
+		border-radius:10px;
+		background:white;
+		margin-bottom:10px;
+		img{
+			width:100%;
+		}
+	}
+
 	.music_intbox{
 	    background:white;
 	    img{
@@ -175,13 +175,26 @@
 //スマホ
 //
 @media screen and (max-width: 1000px) {
-		.music_intbox{
+	.sub_flame{
+		width:100%;
+		border-radius:10px;
+	}
+	.sub_container{
+		width: 100%;
+		border-radius:10px;
+		background:white;
+		margin-bottom:10px;
+		img{
+			width:100%;
+		}
+	}
+	.music_intbox{
 	    background:white;
 	    img{
 	    	display:block;
 	    	width:80vw;
 	    	height:80vw;
-	    	margin:10px calc(10vw - 15px) 15px calc(10vw - 15px);
+	    	margin:15px 10vw;
 	    	object-fit: cover;
 	    }
 	   	.title{

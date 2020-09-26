@@ -25,22 +25,22 @@ h2.lyrich2{
         }
     }
 }
-.lylics_box{
-	margin-top:10px;
-	padding:0 20px;
-}
 
 
 //--------------------------------------------------------------------------------
 //                                   PC
 //--------------------------------------------------------------------------------
 @media screen and (min-width: 1000px) {
+	.lylics_box{
+		margin-top:10px;
+		padding:0 20px;
+	}
 	.kanren_musicList_block{
 	    h2,h1{
 	    	margin-bottom:20px;
 	    }
-	 }
-	 //ページ下部関連曲部分
+	}
+	//ページ下部関連曲部分
 	.kanren_musicList_block{
 	    padding:10px 20px;
 	    width:calc(100% - 40px);
@@ -97,6 +97,10 @@ h2.lyrich2{
 //                                   スマホ
 //--------------------------------------------------------------------------------
 @media screen and (max-width: 1000px) {
+	.lylics_box{
+		margin-top:10px;
+		padding:0 10px;
+	}
 	.kanren_musicList_block{
 	    h2,h1{
 	    	margin-bottom:10px;

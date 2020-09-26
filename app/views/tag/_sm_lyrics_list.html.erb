@@ -1,7 +1,7 @@
 <div class="flex-jus-between fns-h2"><h2><%= label %></h2><a href="/search?model=lyric">もっと見る</a></div>
-<div class="flex" style="width:100%">
+<div class="flex scroll-x" style="width:100%">
   <% lyrics.each do |lyda| %>
-    <a class="sm-newlyric-container" href="/lyrics/<%= lyda["key"] %>">
+    <a class="sm-newlyric-container " href="/lyrics/<%= lyda["key"] %>">
       <div class="juc-image">
         <% if lyda["jucket"].blank? %>
           <div class="plL-noimg flex-jus-center">noimage</div>
