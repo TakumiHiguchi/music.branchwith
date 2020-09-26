@@ -82,6 +82,24 @@ html,body{
     }
 }
 
+nav.pagination{
+    padding:10px 0;
+    span,a{
+        display:block;
+    }
+    span{
+        width:30px;
+        text-align:center;
+    }
+    a{
+        text-decoration:none;
+        width:50px;
+        text-align:center;
+    }
+    a.active{
+        color:#00aced;
+    }
+}
 //--------------------------------------------------------------------------------
 //                                   pc
 //--------------------------------------------------------------------------------

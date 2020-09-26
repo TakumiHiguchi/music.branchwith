@@ -17,6 +17,9 @@
       <% end %>
       <div class="main_container_right">
         <%= render 'search/list',{type: params[:model],result: @result['result']} %>
+        <div class="serach_pagenation">
+          <%= render 'tmp/pagenate',{ pagenation: @result['pagenation'] } %>
+        </div>
       </div>
     </div>
   </div>

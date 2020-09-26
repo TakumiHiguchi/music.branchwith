@@ -11,8 +11,11 @@
                     <%= form_tag("/search",:method => 'get') do %>
                         <div class="Inputline">
                             <i class="fas fa-search"></i>
-                            <%= text_field_tag :query,"#{params[:query]}",{class:"searchInput",placeholder: "曲名やアーティスト名で検索"} %>
-                      </div>
+                            <%= text_field_tag :query,"#{params[:query]}",{class:"searchInput",placeholder: "曲名やアーティスト名で検索"} %>    
+                            <% if params[:model].length > 0 %>
+                                <%= hidden_field_tag :model, params[:model] %>
+                            <% end %>
+                        </div>
                     <% end %>
                 <% end %>
             <% else %>
@@ -20,6 +23,9 @@
                     <div class="Inputline">
                         <i class="fas fa-search"></i>
                         <%= text_field_tag :query,"#{params[:query]}",{class:"searchInput",placeholder: "曲名やアーティスト名で検索"} %>
+                        <% if params[:model].length > 0 %>
+                            <%= hidden_field_tag :model, params[:model] %>
+                        <% end %>
                   </div>
                 <% end %>
             <% end %>

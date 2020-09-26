@@ -1,0 +1,52 @@
+
+<% if pagenation && pagenation['pages'] != 0 %>
+  <nav class="pagination flex-jus-center">
+    <% if pagenation['pages'] < 9 %>
+      <% pagenation['pages'].times do |page| %>
+        <a href="/search?query=<%= params[:query] %>&model=<%= params[:model] %>&page=<%= page + 1 %>" 
+          <% if pagenation['current'] == page %>class="active"<% end %>
+        >
+          <%= page + 1 %>
+        </a>
+      <% end %>
+    <% else %>
+      <% if pagenation['current'] != 1 %>
+        <a href="/search?query=<%= params[:query] %>&model=<%= params[:model] %>&page=1"><<</a>
+        <a href="/search?query=<%= params[:query] %>&model=<%= params[:model] %>&page=<%= pagenation['current'] - 1 %>"><</a>
+      <% end %>
+      <% if pagenation['current'] < 5 %>
+        <% for page in 1..9 do %>
+          <a href="/search?query=<%= params[:query] %>&model=<%= params[:model] %>&page=<%= page %>" 
+            <% if pagenation['current'] == page %>class="active"<% end %>
+          >
+            <%= page %>
+          </a>
+        <% end %>
+      <% elsif pagenation['current'] > (pagenation['pages'] - 4) %>
+        <% for page in (pagenation['pages'] - 8)..pagenation['pages'] do %>
+          <a href="/search?query=<%= params[:query] %>&model=<%= params[:model] %>&page=<%= page %>" 
+            <% if pagenation['current'] == page %>class="active"<% end %>
+          >
+            <%= page %>
+          </a>
+        <% end %>
+      <% else %>
+        <% for page in (pagenation['current'] - 4)..(pagenation['current'] + 4) do %>
+          <a href="/search?query=<%= params[:query] %>&model=<%= params[:model] %>&page=<%= page %>" 
+            <% if pagenation['current'] == page %>class="active"<% end %>
+          >
+            <%= page %>
+          </a>
+        <% end %>
+      <% end %>
+      <% if pagenation['current'] != pagenation['pages'] %>
+        <% if pagenation['current'] < (pagenation['pages'] - 4) %>
+          <span>...</span>
+        <% end %>
+        <a href="/search?query=<%= params[:query] %>&model=<%= params[:model] %>&page=<%= pagenation['current'] + 1 %>">></a>
+        <a href="/search?query=<%= params[:query] %>&model=<%= params[:model] %>&page=<%= pagenation['pages']%>">>></a>
+      <% end %>
+    <% end %>
+        
+  </nav>
+<% end %>

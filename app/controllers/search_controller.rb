@@ -11,9 +11,10 @@ class SearchController < ApplicationController
     https.verify_depth = 5
 
     model = params[:model]
-    model = 'article' if params[:model].nil?
+    model ||= 'article'
     query = '?limit=20&model=' + model
     query += '&q=' + params[:query] if !params[:query].nil?
+    query += '&page=' + params[:page] if !params[:page].nil?
 
     begin
       https.start do
