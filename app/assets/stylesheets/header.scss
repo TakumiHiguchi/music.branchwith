@@ -10,7 +10,7 @@ $maxWidth:100%;
     .main_header{
         width:$inpWidth;
         min-width:$inpWidth;
-        background:#444;
+        background:#9CC5E6;
         padding:2px calc(calc(#{$maxWidth} - #{$inpWidth})/2);
         margin:0;
         .topwer{
@@ -111,7 +111,7 @@ $maxWidth:100%;
 @media screen and (max-width: 1000px) {
     .main_header{
         width:100%;
-        background:#444;
+        background:#9CC5E6;
 
         .topwer{
             display:flex;
