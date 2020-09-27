@@ -40,7 +40,11 @@
       <% article_list.each do |data| %>
         <a href="/article/<%= data["key"] %>" class="next_article_container">
           <div class="left">
-            <%= image_tag data["thumbnail"], class: '' , alt: "#{data["title"]}のサムネイル"%>
+            <% if data['thumbnail'].nil? %>
+              <%= image_tag 'noimage.png', class: 'noimage' %>
+            <% else %>
+              <%= image_tag data["thumbnail"], class: '' , alt: "#{data["title"]}のサムネイル"%>
+            <% end %>
           </div>
           <div class="right">
             <p class="toptitle"><%= data["title"].byteslice(0, 52).scrub('') %><% if data["title"].bytesize > 52 %>...<%end%></p>
@@ -59,7 +63,7 @@
             <div class="title">#<%= tag['name'] %></div>
             <div class="imageContainer">
               <% if tag['thumbnail'].nil? %>
-                noimage
+                <%= image_tag 'noimage.png', class: 'noimage' %>
               <% else %>
                 <%= image_tag tag['thumbnail'] %>
               <% end %>

@@ -10,6 +10,14 @@
     .left{
         width:calc(45% - 7px);
         padding-right:7px;
+        .noimage{
+            display:inline-block;
+            width:auto;
+            height:calc(100% - 20px);
+            padding:10px 0;
+            border-radius:5px;
+            object-fit: cover;
+        }
         img{
             width:100%;
             height:68.6px;
@@ -47,6 +55,15 @@
         height:157.4px;
         border-radius:5px;
         background:#f8f8f8;
+        text-align:center;
+        .noimage{
+            display:inline-block;
+            width:auto;
+            height:calc(100% - 40px);
+            padding:20px 0;
+            border-radius:5px;
+            object-fit: cover;
+        }
         img{
             width:100%;
             height:100%;
