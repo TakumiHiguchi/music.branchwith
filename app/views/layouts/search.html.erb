@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% 
+      if params[:query].nil? || params[:query] == "" 
+        if params[:model] == 'lyric'
+          title = '歌詞一覧'
+        else
+          title = '記事一覧'
+        end
+      else
+        if params[:model] == 'lyric'
+          title = params[:query] + 'の歌詞検索結果'
+        else
+          title = params[:query] + 'の記事検索結果'
+        end
+      end
+    %>
+    <%# メタタグ %>
+    <% set_meta_tags noindex: true %>
+    <% set_meta_tags title: title %>
+    <% set_meta_tags description: title + 'です。music.branchwithでは27万曲以上の歌詞全文や、歌詞解釈、音楽ニュースまで、幅広いコンテンツを扱っています。音楽のことならmusic.branchwithで全て解決！' %>
+    <%= display_meta_tags(default_meta_tags) %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

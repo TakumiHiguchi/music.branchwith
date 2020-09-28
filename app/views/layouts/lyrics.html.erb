@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%# メタタグ %>
+    <% set_meta_tags noindex: true %>
+    <% set_meta_tags title: @lyric['result']['artist'] + 'の' + @lyric['result']['title'] + 'の歌詞全文' %>
+    <% set_meta_tags description: @lyric['result']['title'] %>
+    <%= display_meta_tags(default_meta_tags) %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
