@@ -2,7 +2,11 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>music.branchwith</title>
+    <%# メタタグ %>
+    <% set_meta_tags noindex: true %>
+    <% set_meta_tags title: @tag['name'] %>
+
+    <%= display_meta_tags(default_meta_tags) %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
