@@ -25,6 +25,9 @@
           <% end %>
         </div>
         <div class="tag_article_list">
+          <div class="fns-h2 flex-jus-between" style="margin-bottom:0;">
+            <h2>関連記事</h2><a href="/search?model=article&query=<%= @tag['name'] %>">もっと見る</a>
+          </div>
           <%= render 'tmp/list/top_articleList',{articles: @tag['articles']} %>
         </div>
       </div>
