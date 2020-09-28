@@ -2,8 +2,10 @@
 <html>
   <head>
     <%# メタタグ %>
+    <% set_meta_tags noindex: true %>
+    <% set_meta_tags title: @article['result']['title'] %>
+    <% set_meta_tags description: @article['result']['description'] %>
     <%= display_meta_tags(default_meta_tags) %>
-    <%= display_meta_tags noindex: true %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 

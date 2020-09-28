@@ -19,8 +19,6 @@ class ArticleController < ApplicationController
           end
           @article=JSON.parse(response.body)
           
-
-          p @article
         end
     end
 end
