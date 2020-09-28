@@ -18,6 +18,12 @@
           <% end %>
         </div>
       </div>
+      <% if(@ua.include?('Mobile')|| @ua.include?('Android')) then %>
+        <div class="sub_container">
+					<%= render 'article/sm_share',{article_data: @article["result"]} %>
+				</div>
+      <% end %>
+
       <div class="toc_box">
         <dl id="index">
           <dt>目次</dt>
