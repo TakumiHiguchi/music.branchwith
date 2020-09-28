@@ -40,10 +40,14 @@
       <% article_list.each do |data| %>
         <a href="/article/<%= data["key"] %>" class="next_article_container">
           <div class="left">
-            <%= image_tag data["thumbnail"], class: '' , alt: "#{data["title"]}のサムネイル"%>
+            <% if data['thumbnail'].nil? %>
+              <%= image_tag 'noimage.png', class: 'noimage' %>
+            <% else %>
+              <%= image_tag data["thumbnail"], class: '' , alt: "#{data["title"]}のサムネイル"%>
+            <% end %>
           </div>
           <div class="right">
-            <p class="toptitle"><%= data["title"].byteslice(0, 52).scrub('') %><% if data["title"].bytesize > 52 %>...<%end%></p>
+            <p class="toptitle"><%= data["title"] %></p>
             <div class="dest">ひいらぎ</div>
             <div class="dest"><%= Time.at(data["releaseTime"].to_i).strftime("%Y年%m月%d日に公開") %></div>
           </div>
@@ -59,7 +63,7 @@
             <div class="title">#<%= tag['name'] %></div>
             <div class="imageContainer">
               <% if tag['thumbnail'].nil? %>
-                noimage
+                <%= image_tag 'noimage.png', class: 'noimage' %>
               <% else %>
                 <%= image_tag tag['thumbnail'] %>
               <% end %>
@@ -71,7 +75,7 @@
                 <%= image_tag article["thumbnail"], class: '' , alt: "#{article["title"]}のサムネイル"%>
               </div>
               <div class="right">
-                <p class="toptitle"><%= article["title"].byteslice(0, 52).scrub('') %><% if article["title"].bytesize > 52 %>...<%end%></p>
+                <p class="toptitle"><%= article["title"] %></p>
                 <div class="dest">ひいらぎ</div>
                 <div class="dest"><%= Time.at(article["releaseTime"].to_i).strftime("%Y年%m月%d日に公開") %></div>
               </div>
