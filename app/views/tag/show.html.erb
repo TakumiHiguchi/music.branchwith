@@ -34,7 +34,7 @@
     </div>
     <% if(!@ua.include?('Mobile') && !@ua.include?('Android')) then %>
       <%= render 'tag/sidebar',
-        {} 
+        {recomanded: @tag['recomanded']} 
       %>
 	  <% end %>
   </div>

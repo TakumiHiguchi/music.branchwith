@@ -34,7 +34,25 @@
       </div>
     </div>
   </aside>
-  
+  <aside class="sub_flame" style="padding:10px 0 0 0;">
+    <div class="sub_container">
+      <div class="fns-h2 flex-jus-between" style="margin-bottom:0;">
+        <p>特集記事</p><a href="/search?model=article">もっと見る</a>
+      </div>
+      <% recomanded.each do |article| %>
+        <a href="/article/<%= article['key'] %>" class="next_article_container">
+          <div class="left">
+            <%= image_tag article["thumbnail"], class: '' , alt: "#{article["title"]}のサムネイル"%>
+          </div>
+          <div class="right">
+            <p class="toptitle"><%= article["title"] %></p>
+            <div class="dest">ひいらぎ</div>
+            <div class="dest"><%= Time.at(article["releaseTime"].to_i).strftime("%Y年%m月%d日に公開") %></div>
+          </div>
+        </a>
+      <% end %>
+    </div>
+  </aside>
 
 
 </div>
