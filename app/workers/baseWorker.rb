@@ -15,7 +15,6 @@ class BaseWorker
     https.use_ssl = true
     https.verify_mode = OpenSSL::SSL::VERIFY_PEER
     https.verify_depth = 5
-
     begin
       response = nil
       https.start do
