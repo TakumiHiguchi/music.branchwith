@@ -3,23 +3,13 @@ class TagController < ApplicationController
   end
 
   def show
-    @ua = request.env["HTTP_USER_AGENT"]
-
-    require 'openssl'
-    require 'net/https'
-    uri = URI.parse("https://mbwapi.herokuapp.com/")
-    https = Net::HTTP.new(uri.host, uri.port)
-    https.open_timeout = 10
-    https.read_timeout = 10
-    https.use_ssl = true
-    https.verify_mode = OpenSSL::SSL::VERIFY_PEER
-    https.verify_depth = 5
-    begin
-      response = nil
-      https.start do
-        response = https.get("/api/v1/mbw/tag/" + params[:id])
-      end
+    base = BaseWorker.new
+    response = base.hit_mbw_api({ url: "/api/v1/mbw/tag/" + params[:id] })
+    if response.present?
+      @ua = request.env["HTTP_USER_AGENT"]
       @tag = JSON.parse(response.body)["result"]
+    else
+      render status: 404
     end
   end
 end
