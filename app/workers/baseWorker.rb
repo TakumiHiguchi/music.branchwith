@@ -5,31 +5,35 @@ class BaseWorker
   end
   
   def hit_mbw_api(props)
+    query = ""
     case Rails.env
       when 'test' then
         uri = URI.parse("http://localhost:3020" + props[:url])
-        uri.query = URI.encode_www_form(props[:params])
+        uri.query = URI.encode_www_form(props[:params]) if props[:params]
         http = http_setting(uri)
         begin
           http.start do
-            return http.get(uri.path + '?' + uri.query)
+            query = '?' + uri.query if uri.query
+            return http.get(uri.path + query)
           end
         end
       when 'development' then
         uri = URI.parse("http://localhost:3020" + props[:url])
-        uri.query = URI.encode_www_form(props[:params])
+        uri.query = URI.encode_www_form(props[:params]) if props[:params]
         http = http_setting(uri)
         begin
           http.start do
-            return http.get(uri.path + '?' + uri.query)
+            query = '?' + uri.query if uri.query
+            return http.get(uri.path + query)
           end
         end
       when 'production' then
         uri = URI.parse("https://mbwapi.herokuapp.com" + props[:url])
-        uri.query = URI.encode_www_form(props[:params])
+        uri.query = URI.encode_www_form(props[:params]) if props[:params]
         https = https_setting(uri)
         https.start do
-          return https.get(uri.path + '?' + uri.query)
+          query = '?' + uri.query if uri.query
+          return https.get(uri.path + query)
         end
     end
   end
