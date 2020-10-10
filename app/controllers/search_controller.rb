@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
   def index
     base = BaseWorker.new
-    response = base.hit_mbw_api({ url: "/api/v1/mbw/search" + search_params })
+    response = base.hit_mbw_api({ url: "/api/v1/mbw/search", params: search_params })
     if response.present?
       @ua = request.env["HTTP_USER_AGENT"]
       @result = JSON.parse(response.body)
@@ -12,9 +12,9 @@ class SearchController < ApplicationController
 
   def search_params
     params[:model] ||= 'article'
-    query = '?limit=20&model=' + params[:model]
-    query += '&q=' + params[:query] if !params[:query].nil?
-    query += '&page=' + params[:page] if !params[:page].nil?
+    query = { limit: 20, model: params[:model] }
+    query[:q] = params[:query] if params[:query].present?
+    query[:page] = params[:page] if params[:page].present?
     return query
   end
 end
