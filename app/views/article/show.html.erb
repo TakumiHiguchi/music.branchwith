@@ -4,7 +4,11 @@
   <div class="main_inner">
     <div class="main_container_n">
       <div class="thum">
-				<%= image_tag @article["result"]["thumbnail"], class: '' , alt: "#{@article["result"]["title"]}のサムネイル"%>
+        <% if @article["result"]['thumbnail'].present? %>
+          <%= image_tag @article["result"]["thumbnail"], class: '' , alt: "#{@article["result"]["title"]}のサムネイル"%>
+        <% else %>
+          <%= image_tag 'noimage.png', class: 'noimage' %>
+        <% end %>
       </div>
       <h1 class="inpPost-h1"><%= @article["result"]["title"] %></h1>
       <div class="inpPost-auther_date_box">
