@@ -5,7 +5,7 @@
       <div class="tag_container flex">
         <div class="image_container">
           <% if @tag['thumbnail'].nil? %>
-            no image
+            <%= image_tag 'noimage.png', class: 'noimage' %>
           <% else %>
             <%= image_tag @tag['thumbnail'], class: '' , alt: "#{@tag['name']}のサムネイル"%>
           <% end %>

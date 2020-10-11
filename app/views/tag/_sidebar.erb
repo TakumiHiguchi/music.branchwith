@@ -42,7 +42,11 @@
       <% recomanded.each do |article| %>
         <a href="/article/<%= article['key'] %>" class="next_article_container">
           <div class="left">
-            <%= image_tag article["thumbnail"], class: '' , alt: "#{article["title"]}のサムネイル"%>
+            <% if article['thumbnail'].nil? %>
+              <%= image_tag 'noimage.png', class: 'noimage' %>
+            <% else %>
+              <%= image_tag article['thumbnail'], class: '' , alt: "#{article['title']}のサムネイル"%>
+            <% end %>
           </div>
           <div class="right">
             <p class="toptitle"><%= article["title"] %></p>
