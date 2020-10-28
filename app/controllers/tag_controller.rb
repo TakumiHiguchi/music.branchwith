@@ -1,5 +1,7 @@
 class TagController < ApplicationController
   def index
+    @ua = request.env["HTTP_USER_AGENT"]
+    @page = {:title => "人気タグ"}
   end
 
   def show
@@ -8,6 +10,7 @@ class TagController < ApplicationController
     if response.present?
       @ua = request.env["HTTP_USER_AGENT"]
       @tag = JSON.parse(response.body)["result"]
+      @page = {:title => @tag[:name]}
     else
       render status: 404
     end

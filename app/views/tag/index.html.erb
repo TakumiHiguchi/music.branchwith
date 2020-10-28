@@ -1,2 +1,16 @@
-<h1>Tag#index</h1>
-<p>Find me in app/views/tag/index.html.erb</p>
+<%= render 'tmp/header' ,{s:""}%>
+<main class="main_flame">
+  <div class="main_inner">
+    <div class="main_container_no_c">
+      <div class="tag_container flex">
+        <div style="height:1000px">
+        準備中
+        </div>
+      </div>
+    </div>
+    <% if(!@ua.include?('Mobile') && !@ua.include?('Android')) then %>
+      <%= render 'tag/index_sidebar'%>
+	  <% end %>
+  </div>
+</main>
+<%= render 'tmp/footer' %>
