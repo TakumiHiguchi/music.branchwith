@@ -8,14 +8,14 @@
       <% else %>
         topaList-right
       <% end %>
-    ">
-      <% if pass["thumbnail"] then %>
-        <a href='/article/<%=pass["key"]%>' class="topaImage">
+    "> 
+      <a href='/article/<%=pass["key"]%>' class="topaImage">
+        <% if pass['thumbnail'].nil? %>
+          <%= image_tag 'noimage.png', class: 'noimage' %>
+        <% else %>
           <%= image_tag pass["thumbnail"], class: '' , alt: "#{pass["title"]}のサムネイル"%>
-        </a>
-      <% else %>
-        <div class="topaImage"><Img src="https://i.ytimg.com/vi/ce_9Ze-gf2o/hqdefault.jpg"></div>
-      <% end %>
+        <% end %>
+      </a>
       <a href='/article/<%=pass["key"]%>' class="title"><%= pass["title"] %></a>
       <p class="word_count"><%= strip_tags(pass["content"]).length %>文字</p>
       <% if pass["tags"].length > 0 %>
