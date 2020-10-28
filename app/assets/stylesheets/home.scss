@@ -71,8 +71,12 @@ $main_color:#00aced;
 		}
 		.label{
 			display:block;
+			max-width:45%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
 			position:absolute;
-			background:#00aced;
+			background:rgba(0,172,237,0.8);
 			color:white;
 			border-radius:3px;
 			padding:1px 5px;
