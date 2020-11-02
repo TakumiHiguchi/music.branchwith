@@ -1,20 +1,17 @@
-
-<%# タイトル等設定 %>
-<% provide(:title,"#{@lyric["result"]["artist"]}の#{@lyric["result"]["title"]}の歌詞全文 | music.branchwith") %>
-<% provide(:description, "#{@lyric["result"]["title"]}の歌詞ページ。アーティスト：#{@lyric["result"]["artist"]} 作詞：#{@lyric["result"]["lyricist"]} 作曲：#{@lyric["result"]["composer"]} 歌い出し:#{strip_tags(@lyric["result"]["lyrics"]).truncate(50)}") %>
-
-<%#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------%>
 <%= render 'tmp/header' ,{s:""}%>
 <main class="main_flame" oncontextmenu="return false;">
     <div class="main_inner">
         <div>
-            <div class="main_container_n">
+            <div class="main_container_n" style="padding:20px 0;">
             	<% ua = request.env["HTTP_USER_AGENT"]
             	if(ua.include?('Mobile')|| ua.include?('Android')) then %>
             		<div class="sub_container">
 						<div class="music_intbox">
-							<%= image_tag @lyric["result"]["jucket"].to_s, alt: '#{@lyric["result"]["artist"]}の#{@lyric["result"]["title"].}のジャケット'%>
-							
+							<% if @lyric["result"]["jucket"].nil? %>
+								<%= image_tag 'noimage.png', class: 'noimage' %>
+							<% else %>
+								<%= image_tag @lyric["result"]["jucket"], class: '' , alt: "#{@lyric["result"]["artist"]}の#{@lyric["result"]["title"]}のジャケット"%>
+							<% end %>
 						</div>
 					</div>
 					<div class="sub_container">
@@ -26,7 +23,11 @@
 		            <div class="kasiData_box">
 		                <div class="lyristDatabox">
 		                    <div class="left">
-		                        <%= image_tag @lyric["result"]["jucket"].to_s, class: '' , alt: "#{@lyric["result"]["artist"]}の#{@lyric["result"]["title"]}のジャケット"%>
+													<% if @lyric["result"]["jucket"].nil? %>
+														<%= image_tag 'noimage.png', class: 'noimage' %>
+													<% else %>
+														<%= image_tag @lyric["result"]["jucket"], class: '' , alt: "#{@lyric["result"]["artist"]}の#{@lyric["result"]["title"]}のジャケット"%>
+													<% end %>
 		                    </div>
 		                    <div class="right">
 		                        <div style="display:flex;">曲名：<h1><%= @lyric["result"]["title"] %></h1></div>

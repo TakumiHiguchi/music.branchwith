@@ -68,6 +68,15 @@
     height:388px;
     background:white;
     border-bottom: 1px solid #e0e0e0;
+    text-align:center;
+    .noimage{
+        display:inline-block;
+        width: auto;
+        height:calc(100% - 40px);
+        padding:20px 0;
+        border-radius:5px;
+        object-fit: cover;
+    }
     img{
         display:block;
         width:100%;

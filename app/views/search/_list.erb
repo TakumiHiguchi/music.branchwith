@@ -3,7 +3,11 @@
     <% result.each do |data| %>
       <div class='search_list_wrap search_list_count_4'>
         <a class='image_container' href="/lyrics/<%= data['key'] %>">
-          <div class='image_wrap' style="background-image: url(<%= data['jucket'] %>)"></div>
+          <% if data['jucket'].present? %>
+            <div class='image_wrap' style="background-image: url(<%= data['jucket'] %>)"></div>
+          <% else %>
+            <div class='image_wrap' style="background-image: url(<%= asset_url("noimage_search.png") %>)"></div>
+          <% end %>
         </a>
         <div class='summary_container'>
           <a href="/lyrics/<%= data['key'] %>" class="lyrics_title"><%= data['title'] %></a>
@@ -28,7 +32,11 @@
     <% result.each do |data| %>
       <div class='search_list_wrap search_list_count_4'>
         <a class='image_container' href="/article/<%= data['key'] %>">
-          <div class='image_wrap' style="background-image: url(<%= data['thumbnail'] %>)"></div>
+          <% if data['thumbnail'].present? %>
+            <div class='image_wrap' style="background-image: url(<%= data['thumbnail'] %>)"></div>
+          <% else %>
+            <div class='image_wrap' style="background-image: url(<%= asset_url("noimage_search.png") %>)"></div>
+          <% end %>
         </a>
         <div class='summary_container'>
           <div class='search_tag_container flex scroll-x'>
@@ -37,7 +45,7 @@
             <% end %>
           </div>
           <a href="/article/<%= data['key'] %>" class="title"><%= data['title'] %></a>
-          <p class="word_count"><%= strip_tags(data['content']).length %>文字</p>
+          <p class="word_count"><%= strip_tags(data['content']).length %>文字 約<%= (strip_tags(data['content']).length / 500.to_f).ceil %>分</p>
         </div>
       </div>
     <% end %>

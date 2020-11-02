@@ -14,14 +14,25 @@ h2.lyrich2{
         width:100%;
         display:flex;
         .left{
-            width:20%;
-            margin-right:10px;
+						width:130px;
+						height:130px;
+						margin-right:10px;
+						text-align:center;
+						background:#f8f8f8;
             img{
                 width:100%;
-            }
+						}
+						.noimage{
+							display:inline-block;
+							width: auto;
+							height:calc(100% - 40px);
+							padding:20px 0;
+							border-radius:5px;
+							object-fit: cover;
+						}
         }
         .right{
-            width:calc(80% - 10px);
+            width:calc(100% - 140px);
         }
     }
 }

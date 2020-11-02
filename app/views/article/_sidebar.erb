@@ -72,7 +72,11 @@
           <% tag['related_article'].each do |article| %>
             <a href="/article/<%= article['key'] %>" class="next_article_container">
               <div class="left">
-                <%= image_tag article["thumbnail"], class: '' , alt: "#{article["title"]}のサムネイル"%>
+                <% if article['thumbnail'].present? %>
+                  <%= image_tag article['thumbnail'], class: '' , alt: "#{article['title']}のサムネイル"%>
+                <% else %>
+                  <%= image_tag 'noimage.png', class: 'noimage' %>
+                <% end %>
               </div>
               <div class="right">
                 <p class="toptitle"><%= article["title"] %></p>

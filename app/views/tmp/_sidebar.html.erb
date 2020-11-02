@@ -3,7 +3,11 @@
 	<% if status == "lyric" %>
 		<div class="sub_container">
 			<div class="music_intbox">
-				<%= image_tag @lyric["result"]["jucket"].to_s, alt: '#{@lyric["result"]["artist"]}の#{@lyric["result"]["title"].}のジャケット'%>
+				<% if @lyric["result"]["jucket"].nil? %>
+					<%= image_tag 'noimage.png', class: 'noimage' %>
+				<% else %>
+					<%= image_tag @lyric["result"]["jucket"], class: '' , alt: "#{@lyric["result"]["artist"]}の#{@lyric["result"]["title"]}のジャケット"%>
+				<% end %>
 			</div>
 		</div>
 		<div class="sub_container">
