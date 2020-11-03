@@ -129,6 +129,13 @@ nav.pagination{
                 background:white;
                 border-radius:10px;
             }
+            .main_container_p{
+                width:690px;
+                padding:10px 0;
+                margin-bottom:10px;
+                background:white;
+                border-radius:10px;
+            }
             .main_container_no_c{
                 width:690px;
                 margin-right:10px;
@@ -270,21 +277,24 @@ nav.pagination{
         width:100%;
         .main_inner{
             width:100%;
+            background:white;
             .main_container{
                 width:100%;
-                background:white;
             }
             .main_container_n{
                 width:100%;
-                background:white;
             }
             .main_container_a{
                 width:100%;
                 height:calc(100vh - 70px);
-                background:white;
+            }
+            .main_container_p{
+                width:100%;
+                padding:10px 0;
             }
         }
     }
+    
     .tnav{
         display:flex;
         justify-content:space-between;
