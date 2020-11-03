@@ -20,11 +20,8 @@ music.branchwithのフロントエンドです。頑張ってリファクタリ�
   $ cd music.branchwith
   ```
   
+6. join [mbw.localhost](http://mbw.localhost/)
+
 5. dockerちゃんに全てお任せしましょう
-  ```
-  $ docker-compose build
-  $ docker-compose run web yarn install --check-files
-  $ docker-compose up
-  ```
 
 music.branchwith群の詳しい起動方法は、[mbw-nginx-proxy](https://github.com/TakumiHiguchi/mbw-nginx-proxy)のREADMEを見てください。
