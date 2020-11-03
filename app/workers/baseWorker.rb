@@ -18,7 +18,7 @@ class BaseWorker
           end
         end
       when 'development' then
-        uri = URI.parse("http://localhost:3020" + props[:url])
+        uri = URI.parse("http://mbw-api:3020" + props[:url])
         uri.query = URI.encode_www_form(props[:params]) if props[:params]
         http = http_setting(uri)
         begin
