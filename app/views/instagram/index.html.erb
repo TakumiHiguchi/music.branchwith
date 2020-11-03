@@ -1,0 +1,36 @@
+<%= render 'tmp/topheader',{s:""} %>
+<main class="main_flame">
+  <div class="main_inner">
+    <div class="main_container_n infg">
+      <div class="instagram-prfContainer flex-jus-center">
+        <div class="prf-img">
+        	<%= image_tag "pic.png" %>
+        </div>
+        <div class="prf-cont">
+        	<div class="flex-jus-between"><div class="name">music_bwith</div>
+						<a class="insbtn flex-jus-center" href="https://www.instagram.com/music_bwith/">
+							<i class="fab fa-instagram"></i>
+							<% if(!@ua.include?('Mobile') && !@ua.include?('Android')) then %>
+								Instagramにアクセス
+							<% end %>
+						</a>
+          </div>
+        	<div class="u-name">Hiiragi</div>
+					<div class="description">好きな曲の歌詞考察してます！下の画像をクリックして、考察記事にアクセスください！</div>
+        </div>
+      </div>
+      <div class="insta-main">
+        <a href="https://www.proofly.jp/nuser/music_branchwith/article/gAF4GW6N64U6SXeazJkJ">
+					<%= image_tag "sikakitokohi.jpg" %>
+				</a>
+        <a href="https://www.proofly.jp/nuser/music_branchwith/article/eS2zc49soJQpmV8cKMgB">
+					<%= image_tag "Yorunikakeru.jpg" %>
+				</a>
+			</div>
+    </div>
+    <div class="sidebar">
+			<%= render 'tmp/sidebar',{status:"instagram"} %>
+    </div>
+  </div>
+</main>
+<%= render 'tmp/footer' %>
