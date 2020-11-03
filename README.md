@@ -1,24 +1,30 @@
-# README
+# music.branchwith
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+music.branchwithのフロントエンドです。頑張ってリファクタリングしていますが、コードは汚いと思います。
+## リンク
+[music.branchwith](https://mbw1.herokuapp.com/)
 
-Things you may want to cover:
+## 注意
+- dockerが使える環境はご自身でご用意してください。
 
-* Ruby version
+## 使い方
+1. [mbw-nginx-proxy](https://github.com/TakumiHiguchi/mbw-nginx-proxy)のページを見て、mbw-nginx-proxyをdocker-compose up -dします
+2. mbw-api をdocker-compose up -dします
+3. music.branchwith をcloneしましょう
+  ```
+  $ git clone https://github.com/TakumiHiguchi/music.branchwith.git
+  ```
 
-* System dependencies
+4. ディレクトリに移動しましょう
+  ```
+  $ cd music.branchwith
+  ```
+  
+5. dockerちゃんに全てお任せしましょう
+  ```
+  $ docker-compose build
+  $ docker-compose run web yarn install --check-files
+  $ docker-compose up
+  ```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+music.branchwith群の詳しい起動方法は、[mbw-nginx-proxy](https://github.com/TakumiHiguchi/mbw-nginx-proxy)のREADMEを見てください。
