@@ -1,0 +1,119 @@
+//--------------------------------------------------------------------------------
+//                                   PC
+//--------------------------------------------------------------------------------
+@media screen and (min-width: 1000px) {
+	.instagram-prfContainer{
+		align-items: start;
+		width:100%;
+		border-bottom:1px solid #f0f0f0;
+		.prf-img{
+			width:calc(30% - 80px);
+			padding:0 20px 10px 20px;
+			img{
+				width:100%
+			}
+		}
+		.prf-cont{
+			width:70%;
+			padding:0 20px;
+			.name{
+				padding:10px 0 5px 0;
+				font-size:1.4em;
+			}
+			.insbtn{
+				height:33px;
+				border:1px solid #dbdbdb;
+				text-decoration:none;
+				border-radius:5px;
+				padding:0 10px;
+				.fa-instagram{
+					margin-right:5px;
+				}
+			}
+			.u-name{
+				font-weight:bold;
+	        }
+		}
+
+	}
+	.insta-main{
+		display:flex;
+		width:100%;
+		a{
+			display:block;
+			width:33%;
+			img{
+				display:block;
+				width:100%;
+			}
+			-webkit-transition: -webkit-transform 0.1s linear;
+		    transition: transform 0.1s linear;
+			&:hover{
+		        -webkit-transform: scale(1.05);
+		        transform: scale(0.95);
+		    }
+		}
+	}
+	.infg{
+    min-height:calc(100vh - 245px);
+    padding: 10px 0;
+	}
+}
+//--------------------------------------------------------------------------------
+//                                   スマホ
+//--------------------------------------------------------------------------------
+@media screen and (max-width: 1000px) {
+	.instagram-prfContainer{
+		align-items: start;
+		width:100%;
+		border-bottom:1px solid #f0f0f0;
+		padding:10px 0 0 0;
+		.prf-img{
+			width:calc(30% - 40px);
+			padding:0 10px 10px 15px;
+			img{
+				width:100%
+			}
+		}
+		.prf-cont{
+			width:70%;
+			padding:0 15px 10px 0;
+			.name{
+				padding:10px 0 5px 0;
+				font-size:1.4em;
+			}
+			.insbtn{
+				text-decoration:none;
+				padding-right:5px;
+				.fa-instagram{
+					font-size:33px;
+				}
+			}
+			.u-name{
+				font-weight:bold;
+	        }
+		}
+
+	}
+	.insta-main{
+		display:flex;
+		width:100%;
+		a{
+			display:block;
+			width:50%;
+			img{
+				display:block;
+				width:100%;
+			}
+			-webkit-transition: -webkit-transform 0.1s linear;
+		    transition: transform 0.1s linear;
+			&:hover{
+		        -webkit-transform: scale(1.05);
+		        transform: scale(0.95);
+		    }
+		}
+	}
+	.infg{
+		min-height:calc(100vh - 245px);
+	}
+}

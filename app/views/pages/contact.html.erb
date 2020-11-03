@@ -1,0 +1,37 @@
+<%= render 'tmp/header' ,{s:""}%>
+<main class="main_flame">
+  <div class="main_inner">
+    <% if(!@ua.include?('Mobile') && !@ua.include?('Android')) then %>
+      <%= render 'pages/sidebar' %>
+    <% end %>
+    <div class="main_container_right">
+      <div class="main_container_p">
+        <h1 class="fixpage-h1">このサイトについて・お問い合わせ</h1>
+        <blockquote class="article_style">
+          <p>music.branchwith（以下当サイト）は主にJ-POP、ロック及び、VOCALOID™ を用いて作曲された楽曲の紹介、歌詞の解釈を掲載しているメディアです。あなたの新しい楽曲との出会いをサポートさせていただいています。</p>
+          <p>当サイトを閲覧の際には、<a href="https://music.branchwith.com/プライバシーポリシー/">プライバシーポリシー</a>及び下記利用条件に同意の上ご利用ください。また、利用条件においては当サイトが予告なく変更する場合があります。</p>
+          <h2 class="inpfix-h2">javascriptについて</h2>
+          <div class="inpfix-conB">
+          <p>当サイトではお客さまにより便利にWebサイトをご利用いただけるよう、JavaScriptを使用しております。JavaScriptを無効にして使用された場合、コンテンツが正常に動作しないおそれやページが表示されない場合がございます。当サイトご利用の際には、JavaScriptを有効にしていただきますようお願いいたします。
+          </p>
+          </div>
+          <h2 class="inpfix-h2">リンクについて</h2>
+          <div class="inpfix-conB">
+          <p>当サイトはリンクフリーです。但し、アダルト及び公序良俗に反したサイトからのリンクはお断り致します。リンクを貼られた際には御一報頂けますと幸いです。<br>
+          又、 当サイトから第三者のサイトにリンクを張っている場合や、第三者のサイトから当サイトにリンクを張っている場合、いずれの場合に於いても、第三者のサイトの内容は、第三者の責任で管理・運営されているものであり、それらを利用されたことによって生ずる如何なる不都合や損害についても、当社は責任を負いかねます。</p>
+          </div>
+          <h2 class="inpfix-h2">お問い合わせ</h2>
+          <div class="inpfix-conB">
+          <p>代表： ひいらぎ</p>
+          <p>mail : uiljpfs4fg5hsxzrnhknpdqfx☆gmail.com ☆→@に変えてください。</p>
+
+
+          </div>
+          <p>「VOCALOID（ボーカロイド）」および「ボカロ」はヤマハ株式会社の登録商標です。</p>
+          <p>VOCALOID and VOCALO are trademarks of Yamaha Corporation.</p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</main>
+<%= render 'tmp/footer' %>

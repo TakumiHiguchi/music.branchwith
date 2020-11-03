@@ -19,7 +19,7 @@
       <a href='/article/<%=pass["key"]%>' class="title"><%= pass["title"] %></a>
       <p class="word_count"><%= strip_tags(pass["content"]).length %>文字</p>
       <% if pass["tags"].length > 0 %>
-        <a href="tag/<%= pass["tags"][0]['key'] %>" class="label"><%= pass["tags"][0]['name'] %></a>
+        <a href="/tag/<%= pass["tags"][0]['key'] %>" class="label"><%= pass["tags"][0]['name'] %></a>
       <% end %>
     </div>
   <% end %>
