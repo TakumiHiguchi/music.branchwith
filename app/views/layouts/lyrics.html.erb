@@ -3,7 +3,6 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <%# メタタグ %>
-    <% set_meta_tags noindex: true %>
     <% set_meta_tags title: @lyric['result']['artist'] + 'の' + @lyric['result']['title'] + 'の歌詞全文' %>
     <% set_meta_tags description: @lyric['result']['title'] %>
     <%= display_meta_tags(default_meta_tags) %>
