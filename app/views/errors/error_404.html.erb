@@ -1,0 +1,11 @@
+<% content_for(:title, 'ページが存在しません(404 NOT FOUND)') %>
+<%= render 'tmp/topheader',{s:""} %>
+<main class="main_flame">
+  <div class="main_inner">
+		<div class="main_cont error_container">
+			<p>お探しのページは見つかりませんでした。</p>
+			<%= image_tag "404.jpg",alt: "404 NOTFOUND" %>
+		</div>
+	</div>
+</main>
+<%= render 'tmp/footer' %>

@@ -10,12 +10,12 @@ class ArticleController < ApplicationController
       when 301
         redirect_to '/article/' + JSON.parse(response.body)["key"], status: 301
       when 404
-        render status: 404
+        render template: 'errors/error_404', status: 404, layout: 'error' and return
       else
-        render status: 500
+        render template: 'errors/error_500', status: 500, layout: 'error' and return
       end
     else
-      render status: 404
+      render template: 'errors/error_404', status: 404, layout: 'error' and return
     end
   end
 end
