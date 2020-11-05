@@ -12,6 +12,10 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <% if(@ua.include?('Mobile')|| @ua.include?('Android')) then %>
+      <div class="kotei-googleAd"><%= render 'tmp/google_ad_kotei' %></div>
+    <% end %>
   </head>
 
   <body>

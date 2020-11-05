@@ -9,6 +9,19 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123030023-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-123030023-5');
+    </script>
+
+    <% if(@ua.include?('Mobile')|| @ua.include?('Android')) then %>
+      <div class="kotei-googleAd"><%= render 'tmp/google_ad_kotei' %></div>
+    <% end %>
   </head>
 
   <body>

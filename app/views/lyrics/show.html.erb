@@ -3,8 +3,7 @@
     <div class="main_inner">
         <div>
             <div class="main_container_n" style="padding:20px 0;">
-            	<% ua = request.env["HTTP_USER_AGENT"]
-            	if(ua.include?('Mobile')|| ua.include?('Android')) then %>
+            	<% if(@ua.include?('Mobile')|| @ua.include?('Android')) then %>
             		<div class="sub_container">
 						<div class="music_intbox">
 							<% if @lyric["result"]["jucket"].nil? %>
@@ -16,6 +15,9 @@
 					</div>
 					<div class="sub_container">
 						<%= render 'tmp/side/share' %>
+						<% if(@ua.include?('Mobile')|| @ua.include?('Android')) then %>
+							<%= render 'tmp/google_ad_kotei' %>
+						<% end %>
 					</div>
 					<h2 class="lyrich2"><span>歌詞</span></h2>
             	<% else %>
@@ -43,7 +45,7 @@
             	</div>
             </div>
             
-            <% if(ua.include?('Mobile')|| ua.include?('Android')) then %>
+            <% if(@ua.include?('Mobile')|| @ua.include?('Android')) then %>
 				<div class="sub_container" style="padding-top:20px;">
 					<%= render 'tmp/side/pop_lyList', {lyrics: @poplyric['result'], label: 'おすすめ楽曲'} %>
 				</div>
@@ -58,7 +60,7 @@
 				</div>
 			<% end %>
         </div>
-        <% if(ua.include?('Mobile')|| ua.include?('Android')) then %>
+        <% if(@ua.include?('Mobile')|| @ua.include?('Android')) then %>
         <% else %>
 	        <div class="sidebar">
 				<%= render 'tmp/sidebar',{status:"lyric"} %>
@@ -67,5 +69,8 @@
     </div>
 </main>
 
-
+<div class="main_flame">
+  <%= render 'tmp/google_ad_kanren' %>
+</div>
 <%= render 'tmp/footer' %>
+
