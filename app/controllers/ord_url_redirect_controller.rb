@@ -6,7 +6,11 @@ class OrdUrlRedirectController < ApplicationController
     response = base.hit_mbw_api({ url: "/api/v1/mbw/our_article", params: { key: params[:id] } })
     case response.code.to_i
     when 301
-      redirect_to '/article/' + JSON.parse(response.body)["key"], status: 301
+      if JSON.parse(response.body)["type"] == "article"
+        redirect_to '/article/' + JSON.parse(response.body)["key"], status: 301
+      else
+        redirect_to '/lyrics/' + JSON.parse(response.body)["key"], status: 301
+      end
     when 404
       render status: 404
     else
@@ -14,7 +18,7 @@ class OrdUrlRedirectController < ApplicationController
     end
   end
 
-  def feature
+  def lyrics
 
   end
 end
