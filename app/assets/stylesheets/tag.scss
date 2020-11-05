@@ -68,12 +68,21 @@
       background:#f8f8f8;
       border-radius:5px;
       margin-right:10px;
+      text-align:center;
       img{
         display:block;
         width:100%;
         height:100%;
         object-fit: cover;
         border-radius:5px;
+      }
+      .noimage{
+        display:inline-block;
+        width: auto;
+        height:calc(100% - 20px);
+        padding:10px 0;
+        border-radius:5px;
+        object-fit: cover;
       }
     }
     .tag_container_inf{
@@ -105,15 +114,26 @@
     position:relative;
     display:block;
     width: 26vw;
+    height: 26vw;
     min-width: 26vw;
     margin:0 5px;
     text-decoration:none;
     .juc-image{
       width:100%;
+      height:100%;
+      text-align:center;
       img{
         display:block;
         width:100%;
         height:100%;
+        object-fit: cover;
+      }
+      .noimage{
+        display:inline-block;
+        width: auto;
+        height:calc(100% - 20px);
+        padding:10px 0;
+        border-radius:5px;
         object-fit: cover;
       }
     }

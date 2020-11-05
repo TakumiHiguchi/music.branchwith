@@ -4,7 +4,7 @@
     <a class="sm-newlyric-container " href="/lyrics/<%= lyda["key"] %>">
       <div class="juc-image">
         <% if lyda["jucket"].blank? %>
-          <div class="plL-noimg flex-jus-center">noimage</div>
+          <%= image_tag 'noimage_square.png', class: 'noimage' %>
         <% else %>
           <%= image_tag lyda["jucket"].to_s, class: '' , alt: "#{lyda["artist"]}の#{lyda["title"]}のジャケット" %>
         <% end %>
