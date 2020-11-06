@@ -16,7 +16,7 @@
           <span style="display:block;margin-right:10px;">編集： ひいらぎ</span>
           <span>最終更新： <time><%= Time.at(@article["result"]["releaseTime"].to_i).strftime("%Y年%m月%d日") %></time></span>
         </div>
-        <div class="flex article_tag_container">
+        <div class="article_tag_container">
           <% @article["result"]["tags"].each do |tag| %>
             <a href="/tag/<%= tag['key'] %>"># <%= tag["name"] %></a>
           <% end %>
