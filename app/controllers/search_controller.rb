@@ -1,4 +1,5 @@
 class SearchController < ApplicationController
+  before_action :heroku_normalization
   def index
     base = BaseWorker.new
     response = base.hit_mbw_api({ url: "/api/v1/mbw/search", params: search_params })

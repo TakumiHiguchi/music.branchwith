@@ -1,4 +1,5 @@
 class ArticleController < ApplicationController
+  before_action :heroku_normalization
   def show
     base = BaseWorker.new
     response = base.hit_mbw_api({ url: "/api/v1/mbw/article/" + params[:id] })

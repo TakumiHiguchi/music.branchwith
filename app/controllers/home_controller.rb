@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_action :heroku_normalization
   def index
     base = BaseWorker.new
     response_article = base.hit_mbw_api({ url: "/api/v1/mbw/article", params: { limit: 20 } })

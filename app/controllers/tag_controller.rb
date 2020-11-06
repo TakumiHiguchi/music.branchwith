@@ -1,4 +1,5 @@
 class TagController < ApplicationController
+  before_action :heroku_normalization
   def index
     @ua = request.env["HTTP_USER_AGENT"]
     @page = {:title => "人気タグ"}

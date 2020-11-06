@@ -1,4 +1,5 @@
 class OrdUrlRedirectController < ApplicationController
+  before_action :heroku_normalization
   # 旧式サイトから301リダイレクトするためのコントローラー
   # あとで消す
   def article
