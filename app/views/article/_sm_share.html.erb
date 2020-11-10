@@ -1,7 +1,7 @@
 <div class="share">
     <div class="icon flex-jus-between">
         <a class="ic-fab flex-jus-center" 
-          href="https://twitter.com/intent/tweet?url=<%=request.url%>&text=<%=article_data['title'].gsub(/[[:space:]]/, '').gsub(/\|/, ' ') %>&hashtags=<% article_data['tags'].map do |tag| %><%=tag["name"].gsub(/[[:space:]]/, '')%>,<% end %>music_branchwith," 
+          href="https://twitter.com/intent/tweet?url=<%=request.url%>&text=<%=article_data['title'].gsub(/[[:space:]]/, '').gsub(/\|/, ' ') %>&hashtags=<% article_data['tags'].map do |tag| %><%=tag["name"].gsub(/[[:space:]]/, '')%>,<% end %>music_branchwith" 
           target="_blank" 
           rel="nofollow noopener noreferrer"
         >
