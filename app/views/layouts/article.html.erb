@@ -5,6 +5,14 @@
     <%# メタタグ %>
     <% set_meta_tags title: @article['result']['title'] %>
     <% set_meta_tags description: @article['result']['description'] %>
+    <%
+    if @article["result"]['thumbnail'].present?
+      set_meta_tags twitter:{ image: @article['result']['thumbnail'] }
+    else
+      set_meta_tags twitter:{ image: asset_url('noimage.png') }
+    end
+    %>
+
     <%= display_meta_tags(default_meta_tags) %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
